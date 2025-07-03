@@ -81,13 +81,14 @@ nav ul li a.active {
 .hero h2 {
   font-size: 3rem;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 30px;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+  max-width: 800px;
 }
 
 /* Button */
