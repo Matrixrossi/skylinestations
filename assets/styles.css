@@ -9,17 +9,12 @@ body {
   overflow-x: hidden;
 }
 
-/* Header & Navigation styles */
-header {
-  background: transparent; /* transparent navbar background */
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
+/* Navigation styles */
 nav {
-  /* no background here, handled by header */
+  background-color: transparent; /* Transparent navbar */
+  padding: 15px 0;
+  position: relative;
+  z-index: 10;
 }
 
 nav ul {
@@ -32,9 +27,14 @@ nav ul {
 }
 
 nav ul li a {
-  color: #fff;
+  color: white; /* Make links visible on video background */
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #1e6091;
 }
 
 nav ul li a.active {
@@ -52,29 +52,41 @@ nav ul li a.active {
 
 /* Our Brands Section */
 .our-brands {
-  margin: 40px auto;
   max-width: 960px;
+  margin: 40px auto;
   padding: 40px 20px;
-  color: white;
   text-align: center;
-  background: transparent; /* transparent so video shows through */
+  color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .brands-grid {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
 .brand-card {
   max-width: 280px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: white;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.brand-card:hover {
+  background-color: rgba(30, 96, 145, 0.7);
 }
 
 .brand-card img {
-  max-width: 100%;
-  max-height: 80px;
+  max-width: 150px;
   margin-bottom: 15px;
+  border-radius: 8px;
 }
 
 /* Features section */
@@ -83,11 +95,13 @@ nav ul li a.active {
   margin: 40px auto;
   padding: 20px;
   color: white;
-  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .features h3 {
   margin-bottom: 25px;
+  text-align: center;
   font-size: 2rem;
 }
 
@@ -102,9 +116,8 @@ nav ul li a.active {
   background-color: rgba(255, 255, 255, 0.15);
   padding: 25px;
   border-radius: 10px;
-  flex: 1;
+  flex: 1 1 30%;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  min-width: 250px;
   margin-bottom: 20px;
 }
 
@@ -157,17 +170,12 @@ nav ul li a.active {
 
 /* Footer */
 footer {
-  background: rgba(0,0,0,0.8);
-  color: #aaa;
+  background-color: transparent; /* Keep footer transparent */
+  color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px;
+  margin-top: 40px;
   font-size: 0.9rem;
-  user-select: none;
-}
-
-footer .container {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+  position: relative;
+  z-index: 2;
 }
