@@ -1,14 +1,25 @@
-/* General styles */
+/* Base Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
   background-color: #f2f2f2;
   color: #333;
+  line-height: 1.6;
 }
 
-/* Navigation styles */
+/* Background Video */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Header + Nav */
 header {
   position: absolute;
   top: 0;
@@ -22,6 +33,9 @@ header {
   width: 90%;
   max-width: 1200px;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -29,26 +43,20 @@ header {
   font-weight: bold;
   color: #fff;
   margin: 0;
-  float: left;
-}
-
-nav {
-  float: right;
 }
 
 nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 nav ul li a:hover,
@@ -58,26 +66,16 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
-  position: relative;
   height: 100vh;
-  color: #fff;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  z-index: 1;
+  color: #fff;
   padding: 0 20px;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+  position: relative;
+  z-index: 2;
 }
 
 .hero h2 {
@@ -89,14 +87,14 @@ nav ul li a.active {
 .hero p {
   font-size: 1.3rem;
   margin-bottom: 30px;
-  text-shadow: 0 0 8px rgba(0,0,0,0.7);
-  text-align: center;
-  width: 100%;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0,0,0,0.7);
 }
 
+/* Button */
 .btn {
   display: inline-block;
   background-color: #1e6091;
@@ -112,35 +110,24 @@ nav ul li a.active {
   background-color: #15527c;
 }
 
-/* Background Video */
-video#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
 /* Features Section */
 .features {
   background: #fff;
   padding: 60px 20px;
+  text-align: center;
 }
 
 .features h3 {
-  text-align: center;
-  margin-bottom: 40px;
   font-size: 2rem;
   color: #1e6091;
+  margin-bottom: 40px;
 }
 
 .feature-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
+  gap: 30px;
 }
 
 .feature {
@@ -152,8 +139,8 @@ video#bg-video {
 }
 
 .feature h4 {
-  margin-bottom: 10px;
   color: #1e6091;
+  margin-bottom: 10px;
 }
 
 /* Footer */
