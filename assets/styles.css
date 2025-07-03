@@ -1,172 +1,166 @@
-/* Reset some default */
-* {
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Video background */
-#background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1; /* behind content */
-  filter: brightness(0.5); /* darken video for readability */
-}
-
-/* Body & container */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
   line-height: 1.6;
-  background-color: #000; /* fallback background */
-  overflow-x: hidden;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Navigation styles */
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px 0;
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-/* Header */
-header {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  margin: auto;
 }
 
 .logo {
   font-size: 2rem;
-  font-weight: 700;
-  color: #00aaff;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  user-select: none;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+  float: left;
 }
 
-/* Navigation */
+nav {
+  float: right;
+}
+
 nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
 }
 
 nav ul li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a.active {
-  background-color: #00aaff;
-  color: white;
+  text-decoration: underline;
 }
 
 /* Hero Section */
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 75vh;
-  text-align: center;
-  padding: 0 20px;
   position: relative;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   z-index: 1;
+  padding: 0 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
 }
 
 .hero h2 {
   font-size: 3rem;
   margin-bottom: 20px;
-  font-weight: 700;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
 .hero p {
   font-size: 1.3rem;
-  max-width: 600px;
   margin-bottom: 30px;
   text-shadow: 0 0 8px rgba(0,0,0,0.7);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Button */
 .btn {
-  background-color: #00aaff;
-  color: white;
-  padding: 14px 32px;
-  font-size: 1.2rem;
+  display: inline-block;
+  background-color: #1e6091;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
   text-decoration: none;
-  border-radius: 40px;
-  font-weight: 700;
+  font-weight: bold;
   transition: background-color 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,170,255,0.4);
 }
 
 .btn:hover {
-  background-color: #008ecc;
+  background-color: #15527c;
+}
+
+/* Background Video */
+video#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
 /* Features Section */
 .features {
-  background-color: rgba(0, 0, 0, 0.6);
+  background: #fff;
   padding: 60px 20px;
-  text-align: center;
-  color: white;
-  position: relative;
-  z-index: 1;
 }
 
 .features h3 {
-  font-size: 2.5rem;
+  text-align: center;
   margin-bottom: 40px;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  font-size: 2rem;
+  color: #1e6091;
 }
 
 .feature-grid {
   display: flex;
-  justify-content: center;
-  gap: 50px;
   flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 .feature {
-  max-width: 300px;
+  background: #e6f4ff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .feature h4 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  font-weight: 600;
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+  margin-bottom: 10px;
+  color: #1e6091;
 }
 
 /* Footer */
 footer {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px 0;
+  background-color: #222;
+  color: #fff;
   text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-footer p {
-  margin: 0;
+  padding: 20px;
   font-size: 0.9rem;
-  color: white;
-  user-select: none;
 }
