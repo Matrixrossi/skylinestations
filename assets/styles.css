@@ -1,0 +1,173 @@
+/* Reset & base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+a {
+  color: #1e6091;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+header {
+  background-color: #1e6091;
+  color: white;
+  padding: 15px 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+nav.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  user-select: none;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #144a6e;
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #1e6091, #5aa9e6);
+  color: white;
+  padding: 100px 20px 120px;
+  text-align: center;
+  border-radius: 0 0 40px 40px;
+  margin-bottom: 60px;
+  box-shadow: 0 8px 24px rgba(30, 96, 145, 0.3);
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.hero p {
+  font-size: 1.4rem;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  font-weight: 500;
+}
+.btn-primary {
+  background-color: white;
+  color: #1e6091;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 18px 50px;
+  border-radius: 40px;
+  box-shadow: 0 8px 16px rgba(255,255,255,0.4);
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+.btn-primary:hover {
+  background-color: #144a6e;
+  color: white;
+  box-shadow: 0 8px 24px rgba(20, 74, 110, 0.7);
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  gap: 40px;
+  max-width: 960px;
+  margin: 0 auto 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.feature {
+  background-color: white;
+  flex: 1 1 280px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  padding: 30px 25px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+.feature h3 {
+  color: #1e6091;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+.feature p {
+  font-weight: 500;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Footer */
+footer {
+  background-color: #1e6091;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.6px;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+  .features {
+    flex-direction: column;
+    gap: 25px;
+    max-width: 320px;
+    margin-bottom: 80px;
+  }
+  nav.container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
