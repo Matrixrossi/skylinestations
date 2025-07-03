@@ -2,18 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skyline - The Home of Independent Radio</title>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <!-- Background video -->
-  <video autoplay muted loop id="bg-video">
-    <source src="assets/videos/background.mp4" type="video/mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-
-  <!-- Header & Navigation -->
   <header>
     <div class="container">
       <h1 class="logo">Skyline</h1>
@@ -28,37 +21,44 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="assets/videos/background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
   <section class="hero">
-    <div class="container">
+    <div class="container hero-content">
       <h2>The Home of Independent Radio</h2>
       <p>Skyline is a network that brings passionate, independent radio stations together under one roof.</p>
       <a href="stations.html" class="btn">Explore Stations</a>
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="features">
+  <!-- Our Brands Section -->
+  <section class="our-brands">
     <div class="container">
-      <h3>Why Join Skyline?</h3>
-      <div class="feature-grid">
-        <div class="feature">
-          <h4>Supportive Network</h4>
-          <p>Be part of a growing community of broadcasters helping each other thrive.</p>
+      <h3>Our Brands</h3>
+      <div class="brands-grid">
+        <div class="brand-card">
+          <img src="assets/images/rosss-radio-logo.png" alt="Ross's Radio Logo" />
+          <h4>Ross's Radio</h4>
+          <p>The feel-good station with all your favourite tunes and club classics on weekends.</p>
         </div>
-        <div class="feature">
-          <h4>Visibility</h4>
-          <p>Get your station featured and discovered by new audiences.</p>
+        <div class="brand-card">
+          <img src="assets/images/skyline-radio-logo.png" alt="Skyline Radio Logo" />
+          <h4>Skyline Radio</h4>
+          <p>The flagship network for independent broadcasters sharing their passion worldwide.</p>
         </div>
-        <div class="feature">
-          <h4>Tools & Resources</h4>
-          <p>Access branding, promotion, and hosting tools for your station.</p>
+        <div class="brand-card">
+          <img src="assets/images/hexgames-radio-logo.png" alt="Hex Games Radio Logo" />
+          <h4>Hex Games Radio</h4>
+          <p>Gaming-focused music and shows, powered by Hex Games Interactive.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 Skyline Network. All rights reserved.</p>
