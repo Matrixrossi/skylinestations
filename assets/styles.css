@@ -1,4 +1,4 @@
-/* Base Styles */
+/* Reset & Base */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -68,14 +68,13 @@ nav ul li a.active {
 .hero {
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   color: #fff;
-  padding: 0 20px;
   position: relative;
   z-index: 2;
+  padding: 0 20px;
 }
 
 .hero h2 {
@@ -85,10 +84,12 @@ nav ul li a.active {
 }
 
 .hero p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-bottom: 30px;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
   max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
 }
 
 /* Button */
