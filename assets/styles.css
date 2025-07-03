@@ -4,182 +4,202 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #000; /* changed to black for video background */
-  color: #fff; /* default text color to white */
+  background-color: #f2f2f2;
+  color: #333;
   overflow-x: hidden;
 }
 
-/* Container to keep consistent width */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Header & Nav */
-header {
-  background: rgba(0, 0, 0, 0.7);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
-  padding: 15px 0;
-}
-
-header .logo {
-  color: #00aaff;
-  font-size: 2rem;
-  font-weight: bold;
-  float: left;
-  margin-left: 20px;
-}
-
+/* Navigation styles */
 nav {
-  float: right;
-  margin-right: 20px;
+  background-color: #222;
+  padding: 15px 0;
 }
 
 nav ul {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 30px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 5px 10px;
-  transition: color 0.3s ease;
+  font-weight: 500;
 }
 
-nav ul li a:hover,
 nav ul li a.active {
-  color: #00aaff;
-  border-bottom: 2px solid #00aaff;
+  text-decoration: underline;
 }
 
-/* Hero section */
-.hero {
-  height: 100vh;
+/* Main container */
+.about-container {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* About text */
+.about-text h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+/* Charity section */
+.charity-section {
+  background-color: #e6f4ff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Mascot next to heading */
+.charity-heading {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-  padding: 0 20px;
-}
-
-.hero h2 {
-  font-size: 3rem;
+  gap: 15px;
   margin-bottom: 20px;
-  color: #fff;
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
 }
 
-.hero p {
-  font-size: 1.3rem;
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: #ddd;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+.charity-heading img.mascot-image {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #1e6091;
 }
 
-.btn {
-  background-color: #00aaff;
-  color: #fff;
-  padding: 12px 25px;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
+.charity-heading h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #1e6091;
 }
 
-.btn:hover {
-  background-color: #008ecc;
-}
-
-/* Features section ("Why Join Skyline?") */
-.features {
-  background-color: rgba(0,0,0,0.75);
-  padding: 60px 20px 80px;
-  text-align: center;
-  color: #fff; /* Default to white */
-}
-
-.features h3 {
-  color: #fff; /* White heading */
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 2rem;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
-}
-
-.feature-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.feature {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 30px 25px;
-  width: 280px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-  color: #fff; /* White text */
-  transition: background-color 0.3s ease;
-}
-
-.feature:hover {
-  background: rgba(0, 170, 255, 0.8);
-  box-shadow: 0 8px 30px rgba(0,170,255,0.7);
-}
-
-.feature h4 {
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-.feature p {
-  font-size: 1rem;
-  color: #eee;
-  line-height: 1.4;
+/* Paragraphs inside charity section */
+.charity-section p {
+  margin-bottom: 14px;
 }
 
 /* Footer */
 footer {
-  background-color: #111;
-  color: #aaa;
+  background-color: #222;
+  color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px;
+  margin-top: 40px;
   font-size: 0.9rem;
-  margin-top: 50px;
 }
 
-/* Background Video */
+/* Hero section */
+.hero {
+  position: relative;
+  color: white;
+  text-align: center;
+  padding: 140px 20px 80px;
+  z-index: 2;
+}
+
+/* Brands section */
+.brands {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 40px 20px;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 960px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Brand logos */
+.brands img {
+  max-height: 80px;
+  margin: 0 20px;
+  vertical-align: middle;
+}
+
+/* Features section */
+.features {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 20px;
+  color: white;
+}
+
+.features h3 {
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.feature {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 25px;
+  border-radius: 10px;
+  flex: 1;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.feature h4 {
+  margin-bottom: 15px;
+}
+
+.feature p {
+  font-size: 1rem;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: #1e6091;
+  color: white;
+  padding: 12px 30px;
+  margin-top: 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #144a6e;
+}
+
+/* Background video */
 #background-video {
   position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  filter: brightness(0.6);
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.7);
 }
 
-/* Clearfix for floats */
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
+/* Container wrapper to keep content on top */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
