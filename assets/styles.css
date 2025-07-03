@@ -4,17 +4,20 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #000; /* fallback for video */
-  color: #fff;
+  background-color: #f2f2f2;
+  color: #333;
   overflow-x: hidden;
 }
 
 /* Navigation styles */
-nav {
-  background-color: transparent;
-  padding: 15px 0;
+header, nav {
+  background-color: transparent !important;
   position: relative;
   z-index: 10;
+}
+
+nav {
+  padding: 15px 0;
 }
 
 nav ul {
@@ -27,14 +30,9 @@ nav ul {
 }
 
 nav ul li a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #1e6091;
 }
 
 nav ul li a.active {
@@ -52,54 +50,36 @@ nav ul li a.active {
 
 /* Our Brands Section */
 .our-brands {
+  padding: 40px 20px;
   max-width: 960px;
   margin: 40px auto;
-  padding: 40px 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
+  text-align: center;
   color: white;
-  position: relative;
-  z-index: 2;
 }
 
 .brands-grid {
   display: flex;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
 .brand-card {
-  max-width: 280px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  color: white;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.brand-card:hover {
-  background-color: rgba(30, 96, 145, 0.7);
+  max-width: 250px;
 }
 
 .brand-card img {
-  max-width: 150px;
+  max-width: 100%;
+  height: auto;
   margin-bottom: 15px;
-  border-radius: 8px;
 }
 
 /* Features section */
 .features {
   max-width: 960px;
-  margin: 40px auto 80px;
+  margin: 40px auto;
   padding: 20px;
-  background-color: rgba(0,0,0,0.5);
-  border-radius: 12px;
   color: white;
-  position: relative;
-  z-index: 2;
 }
 
 .features h3 {
@@ -119,10 +99,9 @@ nav ul li a.active {
   background-color: rgba(255, 255, 255, 0.15);
   padding: 25px;
   border-radius: 10px;
-  flex: 1 1 30%;
+  flex: 1;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
-  color: white;
+  min-width: 250px;
 }
 
 .feature h4 {
@@ -174,11 +153,15 @@ nav ul li a.active {
 
 /* Footer */
 footer {
-  background-color: transparent;
-  color: white;
-  text-align: center;
   padding: 20px 0;
-  font-size: 0.9rem;
+  background: transparent;
   position: relative;
-  z-index: 2;
+  z-index: 10;
+}
+
+footer p {
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-size: 0.9rem;
 }
