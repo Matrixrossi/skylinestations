@@ -4,14 +4,14 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
-  background-color: #f2f2f2;
-  color: #333;
+  background-color: #000; /* fallback for video */
+  color: #fff;
   overflow-x: hidden;
 }
 
 /* Navigation styles */
 nav {
-  background-color: transparent; /* Transparent navbar */
+  background-color: transparent;
   padding: 15px 0;
   position: relative;
   z-index: 10;
@@ -27,7 +27,7 @@ nav ul {
 }
 
 nav ul li a {
-  color: white; /* Make links visible on video background */
+  color: white;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -55,7 +55,8 @@ nav ul li a.active {
   max-width: 960px;
   margin: 40px auto;
   padding: 40px 20px;
-  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
   color: white;
   position: relative;
   z-index: 2;
@@ -70,7 +71,7 @@ nav ul li a.active {
 
 .brand-card {
   max-width: 280px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
@@ -92,8 +93,10 @@ nav ul li a.active {
 /* Features section */
 .features {
   max-width: 960px;
-  margin: 40px auto;
+  margin: 40px auto 80px;
   padding: 20px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 12px;
   color: white;
   position: relative;
   z-index: 2;
@@ -119,6 +122,7 @@ nav ul li a.active {
   flex: 1 1 30%;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   margin-bottom: 20px;
+  color: white;
 }
 
 .feature h4 {
@@ -170,11 +174,10 @@ nav ul li a.active {
 
 /* Footer */
 footer {
-  background-color: transparent; /* Keep footer transparent */
+  background-color: transparent;
   color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 20px 0;
   font-size: 0.9rem;
   position: relative;
   z-index: 2;
