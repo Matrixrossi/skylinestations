@@ -4,16 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skyline - The Home of Independent Radio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <!-- Background Video -->
-  <video id="background-video" autoplay muted loop playsinline>
-    <source src="assets/videos/background.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
   <header>
     <div class="container">
       <h1 class="logo">Skyline</h1>
@@ -28,21 +21,42 @@
     </div>
   </header>
 
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="assets/videos/background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
   <main>
     <section class="hero">
       <div class="container hero-content">
         <h2>Welcome to Skyline</h2>
-        <p>Your gateway to the finest independent radio stations under one roof.</p>
+        <p>The Home of Independent Radio — Bringing passionate broadcasters together.</p>
         <a href="stations.html" class="btn">Explore Stations</a>
       </div>
     </section>
 
-    <section class="about-skyline">
+    <section class="about">
       <div class="container">
         <h3>About Skyline</h3>
-        <p>
-          Skyline is a collaborative network empowering independent radio stations with the tools, visibility, and community support they need to thrive. Join us to connect, grow, and reach new audiences.
-        </p>
+        <p>Skyline is a network dedicated to independent radio stations. We provide the tools, resources, and community support needed to help your station grow and thrive.</p>
+      </div>
+    </section>
+
+    <section class="brands">
+      <div class="container">
+        <h3>Our Featured Brands</h3>
+        <div class="brands-grid">
+          <div class="brand-card">
+            <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" />
+            <h4>Ross's Radio</h4>
+            <p>Feel-good tunes and club classics on weekends.</p>
+          </div>
+          <div class="brand-card">
+            <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" />
+            <h4>Timeless FM</h4>
+            <p>Classic hits for every generation.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -51,54 +65,18 @@
         <h3>Why Join Skyline?</h3>
         <div class="feature-grid">
           <div class="feature">
-            <h4>Supportive Community</h4>
-            <p>Collaborate and share resources with passionate broadcasters worldwide.</p>
+            <h4>Supportive Network</h4>
+            <p>Join a growing community of broadcasters helping each other.</p>
           </div>
           <div class="feature">
-            <h4>Boost Your Reach</h4>
-            <p>Get featured on our network and attract listeners beyond your local area.</p>
+            <h4>Increased Visibility</h4>
+            <p>Get featured and reach new audiences.</p>
           </div>
           <div class="feature">
             <h4>Tools & Resources</h4>
-            <p>Access professional branding, marketing, and hosting solutions tailored for radio.</p>
-          </div>
-          <div class="feature">
-            <h4>Expert Guidance</h4>
-            <p>Learn best practices and receive ongoing support from industry veterans.</p>
+            <p>Access branding, promotion, and hosting support.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="featured-stations">
-      <div class="container">
-        <h3>Featured Stations</h3>
-        <div class="station-cards">
-          <div class="station-card">
-            <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" />
-            <h4>Ross's Radio</h4>
-            <p>The feel-good station with your favourite tunes and club classics every weekend.</p>
-            <a href="stations.html#rosss-radio" class="btn btn-secondary">Listen Now</a>
-          </div>
-          <div class="station-card">
-            <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" />
-            <h4>Timeless FM</h4>
-            <p>Classic hits and timeless tracks for every generation.</p>
-            <a href="stations.html#timeless-fm" class="btn btn-secondary">Listen Now</a>
-          </div>
-          <!-- Add more station cards here as needed -->
-        </div>
-      </div>
-    </section>
-
-    <section class="newsletter">
-      <div class="container">
-        <h3>Stay Updated</h3>
-        <p>Subscribe to our newsletter and never miss important news, updates, and exclusive content.</p>
-        <form id="newsletter-form" action="#" method="post">
-          <input type="email" name="email" placeholder="Your email address" required />
-          <button type="submit" class="btn">Subscribe</button>
-        </form>
       </div>
     </section>
   </main>
@@ -110,4 +88,3 @@
   </footer>
 </body>
 </html>
-
