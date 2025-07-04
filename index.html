@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skyline - The Home of Independent Radio</title>
   <link rel="stylesheet" href="assets/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container nav-container">
       <h1 class="logo">Skyline</h1>
       <nav>
         <ul>
@@ -21,132 +22,130 @@
     </div>
   </header>
 
-  <!-- Background Video with Overlay -->
-  <div class="video-wrapper">
-    <video autoplay muted loop playsinline class="background-video">
-      <source src="assets/videos/background.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="video-overlay"></div>
-  </div>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="background-video">
+    <source src="assets/videos/background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-content">
-      <h2>
-        <span class="static-text">The Home of </span>
-        <span class="dynamic-text">
-          <span class="word visible">Independent Radio</span>
-          <span class="word">Passionate Broadcasters</span>
-          <span class="word">Your Soundtrack</span>
-        </span>
-      </h2>
-      <p>Skyline is a network that brings passionate, independent radio stations together under one roof.</p>
-      <a href="stations.html" class="btn">Explore Stations</a>
-    </div>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <h2>Welcome to <span class="highlight">Skyline</span></h2>
+        <p class="hero-subtitle">The Home of Independent Radio — Bringing Passionate Stations Together</p>
+        <a href="stations.html" class="btn btn-primary">Explore Stations</a>
+      </div>
+    </section>
 
-  <!-- Stats Section -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat">
-          <span class="stat-number" data-target="50">0</span>+
-          <p>Stations</p>
-        </div>
-        <div class="stat">
-          <span class="stat-number" data-target="10000">0</span>+
-          <p>Listeners Daily</p>
-        </div>
-        <div class="stat">
-          <span class="stat-number" data-target="100">0</span>+
-          <p>Hours of Content Weekly</p>
+    <!-- About Section -->
+    <section class="about">
+      <div class="container">
+        <h3>About Skyline</h3>
+        <p>Skyline is a growing network dedicated to uniting independent radio stations under one roof, providing support, tools, and a platform for passionate broadcasters to thrive and reach new audiences.</p>
+        <div class="about-features">
+          <div class="feature-card">
+            <img src="assets/icons/community.svg" alt="Community Icon" />
+            <h4>Supportive Community</h4>
+            <p>Connect with fellow broadcasters and grow together.</p>
+          </div>
+          <div class="feature-card">
+            <img src="assets/icons/visibility.svg" alt="Visibility Icon" />
+            <h4>Expand Your Reach</h4>
+            <p>Get discovered by listeners across the globe.</p>
+          </div>
+          <div class="feature-card">
+            <img src="assets/icons/tools.svg" alt="Tools Icon" />
+            <h4>Powerful Tools</h4>
+            <p>Branding, hosting, and promotional resources at your fingertips.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <div class="container">
-      <h3>What Broadcasters Say</h3>
-      <div class="testimonial-slider">
-        <input type="radio" name="slider" id="slide1" checked />
-        <input type="radio" name="slider" id="slide2" />
-        <input type="radio" name="slider" id="slide3" />
-
-        <div class="slides">
-          <div class="slide" id="s1">
-            <p>"Skyline gave my station the exposure and support I always dreamed of."</p>
-            <h4>- Jamie, Ross's Radio</h4>
+    <!-- Featured Stations -->
+    <section class="stations">
+      <div class="container">
+        <h3>Featured Stations</h3>
+        <div class="stations-grid">
+          <div class="station-card">
+            <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" />
+            <h4>Ross's Radio</h4>
+            <p>The feel-good station playing your favourite tunes and weekend club classics.</p>
           </div>
-          <div class="slide" id="s2">
-            <p>"A welcoming community where independent radio thrives."</p>
-            <h4>- Alex, Timeless FM</h4>
+          <div class="station-card">
+            <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" />
+            <h4>Timeless FM</h4>
+            <p>Classic hits and timeless tracks for every generation.</p>
           </div>
-          <div class="slide" id="s3">
-            <p>"The tools and resources Skyline provides made launching so much easier."</p>
-            <h4>- Morgan, New Wave Radio</h4>
-          </div>
-        </div>
-
-        <div class="navigation">
-          <label for="slide1" class="nav-btn"></label>
-          <label for="slide2" class="nav-btn"></label>
-          <label for="slide3" class="nav-btn"></label>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Call to Action -->
-  <section class="cta">
-    <div class="container">
-      <h3>Ready to Join the Skyline Network?</h3>
-      <p>Become part of a growing family of passionate broadcasters. Elevate your station and reach new listeners.</p>
-      <a href="contact.html" class="btn btn-cta">Get Started</a>
-    </div>
-  </section>
+    <!-- Latest News -->
+    <section class="news">
+      <div class="container">
+        <h3>Latest News</h3>
+        <div class="news-grid">
+          <article class="news-card">
+            <h4>Skyline Launches New Broadcast Tools</h4>
+            <p>We’ve rolled out powerful new features to help stations grow their audience and streamline promotion.</p>
+            <a href="#">Read More &rarr;</a>
+          </article>
+          <article class="news-card">
+            <h4>Join Our Upcoming Webinar</h4>
+            <p>Learn how to make the most out of your station by attending our free broadcaster webinar.</p>
+            <a href="#">Read More &rarr;</a>
+          </article>
+          <article class="news-card">
+            <h4>Spotlight on Ross's Radio</h4>
+            <p>Discover how Ross’s Radio is making waves with feel-good music and community events.</p>
+            <a href="#">Read More &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h3>What Broadcasters Say</h3>
+        <div class="testimonial-slider">
+          <div class="testimonial">
+            <p>“Joining Skyline has transformed our station’s reach and support network. Highly recommend!”</p>
+            <strong>- Emma J., Timeless FM</strong>
+          </div>
+          <div class="testimonial">
+            <p>“The tools and community here helped us grow faster than ever imagined.”</p>
+            <strong>- Ross M., Ross’s Radio</strong>
+          </div>
+          <div class="testimonial">
+            <p>“A fantastic platform for independent broadcasters to thrive and connect.”</p>
+            <strong>- Liam P., New Wave Radio</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="call-to-action">
+      <div class="container cta-content">
+        <h3>Ready to Join Skyline?</h3>
+        <p>Become part of our vibrant network and grow your station today.</p>
+        <a href="contact.html" class="btn btn-secondary">Get Started</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <div class="container">
+    <div class="container footer-container">
       <p>&copy; 2025 Skyline Network. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook" class="social-icon">Fb</a>
+        <a href="#" aria-label="Twitter" class="social-icon">Tw</a>
+        <a href="#" aria-label="Instagram" class="social-icon">Ig</a>
+      </div>
     </div>
   </footer>
-
-  <script>
-    // Stats counter animation
-    const counters = document.querySelectorAll('.stat-number');
-    const speed = 200; // lower = faster
-
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-
-        const increment = Math.ceil(target / speed);
-
-        if(count < target) {
-          counter.innerText = count + increment;
-          setTimeout(updateCount, 20);
-        } else {
-          counter.innerText = target;
-        }
-      };
-
-      // Trigger animation when stats section visible
-      let triggered = false;
-      const statsSection = document.querySelector('.stats');
-      window.addEventListener('scroll', () => {
-        const sectionPos = statsSection.getBoundingClientRect().top;
-        const screenPos = window.innerHeight;
-
-        if(sectionPos < screenPos && !triggered) {
-          updateCount();
-          triggered = true;
-        }
-      });
-    });
-  </script>
 </body>
 </html>
