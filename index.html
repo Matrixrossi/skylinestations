@@ -9,7 +9,6 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
     rel="stylesheet"
   />
-  <script defer src="nav-toggle.js"></script>
 </head>
 <body>
   <header>
@@ -24,14 +23,17 @@
         <ul id="nav-menu" class="nav-menu">
           <li><a href="#" class="active">Home</a></li>
           <li><a href="#">Stations</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">Events</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <video autoplay muted loop playsinline class="background-video">
+  <!-- Background video -->
+  <video autoplay muted loop playsinline class="background-video" preload="auto">
     <source src="assets/videos/background.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
@@ -41,7 +43,7 @@
     <section class="hero">
       <div class="container hero-content">
         <h2>Welcome to Skyline</h2>
-        <p>Your gateway to independent radio stations worldwide.</p>
+        <p>Your independent gateway to the world of quality radio stations.</p>
         <a href="#" class="btn btn-primary">Explore Stations</a>
       </div>
     </section>
@@ -50,53 +52,63 @@
       <div class="container">
         <h3>About Skyline</h3>
         <p>
-          Skyline unites the best independent radio stations under one powerful
-          network. We provide the platform, tools, and community for stations to
-          grow and thrive.
+          Skyline is a cutting-edge network bringing together the best independent radio stations under one roof. We deliver high-quality audio streaming with the freshest music, exclusive shows, and community engagement.
         </p>
       </div>
     </section>
 
     <section class="features">
-      <div class="container">
-        <h3>What We Offer</h3>
-        <div class="feature-grid">
-          <div class="feature">
-            <h4>Supportive Community</h4>
-            <p>Collaborate and share with fellow broadcasters worldwide.</p>
-          </div>
-          <div class="feature">
-            <h4>Powerful Tools</h4>
-            <p>Advanced branding, streaming, and analytics at your fingertips.</p>
-          </div>
-          <div class="feature">
-            <h4>Global Exposure</h4>
-            <p>Reach thousands of listeners and grow your audience daily.</p>
-          </div>
+      <div class="container features-grid">
+        <div class="feature-card">
+          <h4>Crystal Clear Streaming</h4>
+          <p>Experience our professionally curated streams with minimal downtime and unmatched sound quality.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Exclusive Shows</h4>
+          <p>Discover unique content with DJ sets, live interviews, and community spotlights you won't find anywhere else.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Community First</h4>
+          <p>Join an active network of listeners and creators. Skyline is your place to connect, share, and grow.</p>
+        </div>
+        <div class="feature-card">
+          <h4>Multi-Platform Access</h4>
+          <p>Listen anytime, anywhere — from your desktop to mobile, smart devices, and more.</p>
         </div>
       </div>
     </section>
 
-    <section class="news">
+    <section class="stations-preview">
       <div class="container">
-        <h3>Latest News</h3>
-        <article class="news-item">
-          <h4>New Streaming Platform Launched</h4>
-          <p>Enjoy high-quality streams with our brand new platform.</p>
-          <a href="#">Read More</a>
-        </article>
-        <article class="news-item">
-          <h4>Partner Stations Now Live Globally</h4>
-          <p>Our network partners gain worldwide exposure.</p>
-          <a href="#">Read More</a>
-        </article>
+        <h3>Featured Stations</h3>
+        <div class="stations-grid">
+          <article class="station-card">
+            <h4>Ross's Radio</h4>
+            <p>Feel-good hits and club classics, hosted by Ross himself every Saturday night.</p>
+            <a href="#" class="btn btn-secondary">Listen Now</a>
+          </article>
+          <article class="station-card">
+            <h4>Skyline Chill</h4>
+            <p>Relax with smooth beats, downtempo, and chillout music for any mood.</p>
+            <a href="#" class="btn btn-secondary">Listen Now</a>
+          </article>
+          <article class="station-card">
+            <h4>Urban Vibes</h4>
+            <p>The freshest urban music, hip hop, and R&B curated by top DJs.</p>
+            <a href="#" class="btn btn-secondary">Listen Now</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="cta">
-      <div class="container">
-        <h3>Ready to Join Skyline?</h3>
-        <a href="#" class="btn btn-secondary">Get Started Today</a>
+    <section class="newsletter">
+      <div class="container newsletter-container">
+        <h3>Stay Connected</h3>
+        <p>Subscribe to our newsletter and never miss an update, new shows, or exclusive events.</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Your email address" aria-label="Email" required />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
       </div>
     </section>
   </main>
@@ -104,12 +116,26 @@
   <footer>
     <div class="container footer-content">
       <p>&copy; 2025 Skyline Network. All rights reserved.</p>
-      <div class="social-icons">
-        <a href="#" aria-label="Facebook" class="social-icon">Fb</a>
-        <a href="#" aria-label="Twitter" class="social-icon">Tw</a>
-        <a href="#" aria-label="Instagram" class="social-icon">Ig</a>
-      </div>
+      <p>Designed &amp; developed by Skyline Interactive</p>
     </div>
   </footer>
+
+  <script>
+    // Navigation toggle for mobile
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Newsletter form handler (dummy)
+    const newsletterForm = document.getElementById('newsletter-form');
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thanks for subscribing!');
+      newsletterForm.reset();
+    });
+  </script>
 </body>
 </html>
