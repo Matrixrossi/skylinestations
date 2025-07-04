@@ -3,139 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skyline - Independent Radio Network</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <title>Skyline - The Home of Independent Radio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
+  <!-- Background Video -->
+  <video id="background-video" autoplay muted loop playsinline>
+    <source src="assets/videos/background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
   <header>
-    <div class="container nav-container">
+    <div class="container">
       <h1 class="logo">Skyline</h1>
       <nav>
-        <button id="nav-toggle" aria-label="Toggle navigation menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul id="nav-menu" class="nav-menu">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">Stations</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Schedule</a></li>
-          <li><a href="#">Events</a></li>
-          <li><a href="#">Contact</a></li>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="stations.html">Stations</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Background video -->
-  <video autoplay muted loop playsinline class="background-video" preload="auto">
-    <source src="assets/videos/background.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <div class="video-overlay"></div>
-
   <main>
     <section class="hero">
       <div class="container hero-content">
         <h2>Welcome to Skyline</h2>
-        <p>Your independent gateway to the world of quality radio stations.</p>
-        <a href="#" class="btn btn-primary">Explore Stations</a>
+        <p>Your gateway to the finest independent radio stations under one roof.</p>
+        <a href="stations.html" class="btn">Explore Stations</a>
       </div>
     </section>
 
-    <section class="about">
+    <section class="about-skyline">
       <div class="container">
         <h3>About Skyline</h3>
         <p>
-          Skyline is a cutting-edge network bringing together the best independent radio stations under one roof. We deliver high-quality audio streaming with the freshest music, exclusive shows, and community engagement.
+          Skyline is a collaborative network empowering independent radio stations with the tools, visibility, and community support they need to thrive. Join us to connect, grow, and reach new audiences.
         </p>
       </div>
     </section>
 
     <section class="features">
-      <div class="container features-grid">
-        <div class="feature-card">
-          <h4>Crystal Clear Streaming</h4>
-          <p>Experience our professionally curated streams with minimal downtime and unmatched sound quality.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Exclusive Shows</h4>
-          <p>Discover unique content with DJ sets, live interviews, and community spotlights you won't find anywhere else.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Community First</h4>
-          <p>Join an active network of listeners and creators. Skyline is your place to connect, share, and grow.</p>
-        </div>
-        <div class="feature-card">
-          <h4>Multi-Platform Access</h4>
-          <p>Listen anytime, anywhere — from your desktop to mobile, smart devices, and more.</p>
+      <div class="container">
+        <h3>Why Join Skyline?</h3>
+        <div class="feature-grid">
+          <div class="feature">
+            <h4>Supportive Community</h4>
+            <p>Collaborate and share resources with passionate broadcasters worldwide.</p>
+          </div>
+          <div class="feature">
+            <h4>Boost Your Reach</h4>
+            <p>Get featured on our network and attract listeners beyond your local area.</p>
+          </div>
+          <div class="feature">
+            <h4>Tools & Resources</h4>
+            <p>Access professional branding, marketing, and hosting solutions tailored for radio.</p>
+          </div>
+          <div class="feature">
+            <h4>Expert Guidance</h4>
+            <p>Learn best practices and receive ongoing support from industry veterans.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="stations-preview">
+    <section class="featured-stations">
       <div class="container">
         <h3>Featured Stations</h3>
-        <div class="stations-grid">
-          <article class="station-card">
+        <div class="station-cards">
+          <div class="station-card">
+            <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" />
             <h4>Ross's Radio</h4>
-            <p>Feel-good hits and club classics, hosted by Ross himself every Saturday night.</p>
-            <a href="#" class="btn btn-secondary">Listen Now</a>
-          </article>
-          <article class="station-card">
-            <h4>Skyline Chill</h4>
-            <p>Relax with smooth beats, downtempo, and chillout music for any mood.</p>
-            <a href="#" class="btn btn-secondary">Listen Now</a>
-          </article>
-          <article class="station-card">
-            <h4>Urban Vibes</h4>
-            <p>The freshest urban music, hip hop, and R&B curated by top DJs.</p>
-            <a href="#" class="btn btn-secondary">Listen Now</a>
-          </article>
+            <p>The feel-good station with your favourite tunes and club classics every weekend.</p>
+            <a href="stations.html#rosss-radio" class="btn btn-secondary">Listen Now</a>
+          </div>
+          <div class="station-card">
+            <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" />
+            <h4>Timeless FM</h4>
+            <p>Classic hits and timeless tracks for every generation.</p>
+            <a href="stations.html#timeless-fm" class="btn btn-secondary">Listen Now</a>
+          </div>
+          <!-- Add more station cards here as needed -->
         </div>
       </div>
     </section>
 
     <section class="newsletter">
-      <div class="container newsletter-container">
-        <h3>Stay Connected</h3>
-        <p>Subscribe to our newsletter and never miss an update, new shows, or exclusive events.</p>
-        <form id="newsletter-form">
-          <input type="email" placeholder="Your email address" aria-label="Email" required />
-          <button type="submit" class="btn btn-primary">Subscribe</button>
+      <div class="container">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter and never miss important news, updates, and exclusive content.</p>
+        <form id="newsletter-form" action="#" method="post">
+          <input type="email" name="email" placeholder="Your email address" required />
+          <button type="submit" class="btn">Subscribe</button>
         </form>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-content">
+    <div class="container">
       <p>&copy; 2025 Skyline Network. All rights reserved.</p>
-      <p>Designed &amp; developed by Skyline Interactive</p>
     </div>
   </footer>
-
-  <script>
-    // Navigation toggle for mobile
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('open');
-    });
-
-    // Newsletter form handler (dummy)
-    const newsletterForm = document.getElementById('newsletter-form');
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Thanks for subscribing!');
-      newsletterForm.reset();
-    });
-  </script>
 </body>
 </html>
+
