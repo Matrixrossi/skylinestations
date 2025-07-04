@@ -264,3 +264,108 @@ footer {
     max-width: 90%;
   }
 }
+
+/* Skylines Reach Page */
+
+.reach-hero {
+  background: url('../assets/reach-hero-bg.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 140px 20px 100px;
+  filter: brightness(0.75);
+  position: relative;
+  z-index: 1;
+}
+
+.reach-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.reach-hero h2 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.reach-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.reach-mission,
+.reach-projects,
+.reach-get-involved {
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 0 20px;
+  color: #222;
+}
+
+.reach-mission h3,
+.reach-projects h3,
+.reach-get-involved h3 {
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.reach-mission p,
+.reach-get-involved p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 40px;
+}
+
+.projects-list li {
+  background-color: #1e6091;
+  color: white;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(30, 96, 145, 0.4);
+}
+
+.projects-list h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.projects-list p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.reach-get-involved .btn {
+  display: inline-block;
+  background-color: #1e6091;
+  color: white;
+  padding: 14px 38px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.reach-get-involved .btn:hover {
+  background-color: #144a6e;
+}
+
+/* Keep header and footer consistent */
+header nav ul li a.active {
+  color: #1e6091;
+  font-weight: 700;
+  text-decoration: underline;
+}
