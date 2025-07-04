@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <div class="container">
+    <div class="container nav-container">
       <h1 class="logo">Skyline</h1>
       <nav>
         <ul>
@@ -21,24 +21,29 @@
     </div>
   </header>
 
-  <!-- Background Video -->
   <video autoplay muted loop playsinline class="background-video">
     <source src="assets/videos/background.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
   </video>
 
   <section class="hero">
     <div class="container hero-content">
-      <h2>The Home of Independent Radio</h2>
-      <p>Skyline is a network that brings passionate, independent radio stations together under one roof.</p>
+      <h2>Welcome to Skyline</h2>
+      <p>Your gateway to independent online radio. Listen. Connect. Thrive.</p>
       <a href="stations.html" class="btn">Explore Stations</a>
     </div>
   </section>
 
-  <!-- Our Brands Section -->
+  <section class="live-highlight">
+    <div class="container">
+      <h3>🎧 Now Playing on Ross’s Radio</h3>
+      <p>Feel-good anthems and club classics – live right now.</p>
+      <a href="rosss-radio.html" class="btn small">Listen Live</a>
+    </div>
+  </section>
+
   <section class="our-brands">
     <div class="container">
-      <h3>Our Brands</h3>
+      <h3>Discover Our Stations</h3>
       <div class="brands-grid">
         <div class="brand-card">
           <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" />
@@ -54,30 +59,59 @@
     </div>
   </section>
 
-  <!-- Why Join Skyline Section -->
   <section class="features">
     <div class="container">
       <h3>Why Join Skyline?</h3>
       <div class="feature-grid">
         <div class="feature">
-          <h4>Supportive Network</h4>
-          <p>Be part of a growing community of broadcasters helping each other thrive.</p>
+          <h4>🚀 Boost Your Reach</h4>
+          <p>Tap into an audience already looking for great radio experiences.</p>
         </div>
         <div class="feature">
-          <h4>Visibility</h4>
-          <p>Get your station featured and discovered by new audiences.</p>
+          <h4>🤝 Community Support</h4>
+          <p>Work alongside other passionate broadcasters and creators.</p>
         </div>
         <div class="feature">
-          <h4>Tools & Resources</h4>
-          <p>Access branding, promotion, and hosting tools for your station.</p>
+          <h4>🎯 Custom Tools</h4>
+          <p>Get branding, promotion, and tech support from the Skyline team.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
+  <section class="testimonials">
     <div class="container">
+      <h3>What Our Broadcasters Say</h3>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>"Skyline gave us the push we needed. We've doubled our listeners!"</p>
+          <strong>- DJ Roxy, Ross’s Radio</strong>
+        </div>
+        <div class="testimonial">
+          <p>"Being part of this network means everything. It’s more than just radio."</p>
+          <strong>- Timeless FM Host</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container">
+      <h3>Stay in the Loop</h3>
+      <p>Sign up to get the latest station launches, exclusive interviews, and more.</p>
+      <form>
+        <input type="email" placeholder="Your Email" required />
+        <button type="submit" class="btn small">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
       <p>&copy; 2025 Skyline Network. All rights reserved.</p>
+      <p class="footer-links">
+        <a href="#">Privacy</a> | <a href="#">Terms</a> | <a href="#">Instagram</a>
+      </p>
     </div>
   </footer>
 </body>
