@@ -1,173 +1,70 @@
-/* Reset + Base */
-* {
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
   line-height: 1.6;
+  background-color: #000; /* fallback if video fails */
+  color: rgba(255, 255, 255, 0.95);
   overflow-x: hidden;
 }
 
-/* Layout Containers */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+/* Navigation styles */
+header, nav {
+  background-color: transparent !important;
   position: relative;
-  z-index: 2;
-}
-
-/* Header & Navigation */
-header {
-  position: absolute;
-  width: 100%;
-  top: 0;
   z-index: 10;
-  padding: 20px 0;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-size: 1.8rem;
-  color: #fff;
-  font-weight: 700;
-  letter-spacing: 1px;
+nav {
+  padding: 15px 0;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  justify-content: center;
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: opacity 0.3s;
 }
 
-nav ul li a:hover,
 nav ul li a.active {
-  opacity: 0.8;
+  text-decoration: underline;
 }
 
-/* Background Video */
-.background-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.65);
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Hero Section */
+/* Hero section */
 .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  color: white;
   text-align: center;
-  color: #fff;
+  padding: 140px 20px 80px;
   z-index: 2;
 }
 
-.hero h2 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  max-width: 600px;
-  margin-inline: auto;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background-color: #1e6091;
-  color: white;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #144a6e;
-}
-
-.btn.small {
-  padding: 10px 20px;
-  font-size: 0.95rem;
-}
-
-/* Live Highlight Section */
-.live-highlight {
-  background: #e6f2fa;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.live-highlight h3 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.live-highlight p {
-  margin-bottom: 20px;
-}
-
-/* Our Brands / Stations Grid */
+/* Our Brands Section */
 .our-brands {
-  background: #fdfdfd;
-  padding: 80px 20px;
+  padding: 40px 20px;
+  max-width: 960px;
+  margin: 40px auto;
   text-align: center;
-}
-
-.our-brands h3 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
 }
 
 .brands-grid {
   display: flex;
-  gap: 40px;
   justify-content: center;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
 .brand-card {
-  max-width: 280px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.brand-card:hover {
-  transform: translateY(-5px);
+  max-width: 250px;
 }
 
 .brand-card img {
@@ -176,146 +73,93 @@ nav ul li a.active {
   margin-bottom: 15px;
 }
 
-.brand-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-}
-
-/* Features Section */
+/* Features section */
 .features {
-  background: #f0f8ff;
-  padding: 80px 20px;
-  text-align: center;
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 20px;
 }
 
 .features h3 {
+  margin-bottom: 25px;
+  text-align: center;
   font-size: 2rem;
-  margin-bottom: 40px;
 }
 
 .feature-grid {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 20px;
   flex-wrap: wrap;
-  gap: 30px;
 }
 
 .feature {
-  flex: 1;
-  min-width: 250px;
-  max-width: 300px;
-  background: white;
-  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  min-width: 250px;
 }
 
 .feature h4 {
-  font-size: 1.1rem;
   margin-bottom: 15px;
 }
 
-/* Testimonials Section */
-.testimonials {
-  background: #ffffff;
-  padding: 80px 20px;
-  text-align: center;
+.feature p {
+  font-size: 1rem;
 }
 
-.testimonials h3 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-.testimonial-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.testimonial {
-  background: #f7f7f7;
-  padding: 25px;
-  border-radius: 10px;
-  max-width: 400px;
-  font-style: italic;
-}
-
-/* Newsletter */
-.newsletter {
-  background: #1e6091;
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: #1e6091;
   color: white;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.newsletter h3 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-.newsletter p {
-  margin-bottom: 20px;
-}
-
-.newsletter form {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.newsletter input[type="email"] {
-  padding: 10px 20px;
+  padding: 12px 30px;
+  margin-top: 25px;
   border-radius: 30px;
-  border: none;
-  outline: none;
-  min-width: 250px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #144a6e;
+}
+
+/* Background video */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.65);
+}
+
+/* Container wrapper */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Footer */
 footer {
-  background: #0c0c0c;
-  color: #ccc;
-  padding: 40px 20px;
+  padding: 20px 0;
+  background: transparent;
+  position: relative;
+  z-index: 10;
+}
+
+footer p {
   text-align: center;
-}
-
-.footer-links a {
-  color: #ccc;
-  margin: 0 8px;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 2.4rem;
-  }
-
-  .brands-grid,
-  .feature-grid,
-  .testimonial-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .newsletter form {
-    flex-direction: column;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-  }
+  margin: 0;
+  color: white;
+  font-size: 0.9rem;
 }
