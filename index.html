@@ -2,91 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skyline - The Home of Independent Radio</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skyline Radio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Background Video -->
+  <video autoplay muted loop class="background-video">
+    <source src="background.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Header -->
   <header>
     <div class="container">
-      <h1 class="logo">Skyline</h1>
+      <div class="logo">Skyline</div>
       <nav>
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="stations.html">Stations</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="reach.html">Reach</a></li>
+          <li><a href="events.html">Events</a></li> <!-- Added Events link -->
         </ul>
       </nav>
     </div>
   </header>
 
-  <video autoplay muted loop playsinline class="background-video">
-    <source src="assets/videos/background.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
-  <main class="overlay">
+  <!-- Main Overlay Content -->
+  <div class="overlay">
     <section class="hero">
       <div class="container">
         <h2>Welcome to Skyline</h2>
-        <p>The home of independent radio. Connecting passionate broadcasters with loyal listeners.</p>
-        <a href="stations.html" class="btn">Explore Stations</a>
+        <p>Your network for incredible radio content, club classics, and more.</p>
+        <a href="events.html" class="btn">View Events</a>
       </div>
     </section>
 
-    <section class="about">
-      <div class="container">
-        <h3>About Skyline</h3>
-        <p>Skyline is a dedicated network supporting independent radio stations across the UK and beyond. Whether you're just starting out or looking to grow, we give broadcasters the tools, exposure, and community to thrive.</p>
-      </div>
-    </section>
+    <!-- You can keep your other sections here (About, Features, etc.) -->
 
-    <section class="brands">
-      <div class="container">
-        <h3>Our Featured Brands</h3>
-        <div class="brands-grid">
-          <div class="brand-card">
-            <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" />
-            <h4>Ross's Radio</h4>
-            <p>Feel-good tunes and weekend club classics hosted by Ross himself.</p>
-          </div>
-          <div class="brand-card">
-            <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" />
-            <h4>Timeless FM</h4>
-            <p>Classic hits for every generation, from the 60s to the 2000s.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="container">
-        <h3>Why Join Skyline?</h3>
-        <div class="feature-grid">
-          <div class="feature">
-            <h4>Supportive Community</h4>
-            <p>Work with a team that genuinely wants to see you succeed.</p>
-          </div>
-          <div class="feature">
-            <h4>Boost Your Reach</h4>
-            <p>Get promoted across the Skyline network and social channels.</p>
-          </div>
-          <div class="feature">
-            <h4>Powerful Tools</h4>
-            <p>Access our branding kits, hosting solutions, and mentorship.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Skyline Network. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer>
+      <p>© 2025 Skyline Radio Network. All rights reserved.</p>
+    </footer>
+  </div>
 </body>
 </html>
-
