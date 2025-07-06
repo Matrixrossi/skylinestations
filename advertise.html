@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skyline - Advertise</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0f27;
+    color: #f1f5ff;
+    overflow-x: hidden;
+  }
+  a {
+    color: #74b9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #a0c4ff;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 270px;
+    height: 100%;
+    background: rgba(6, 19, 59, 0.95);
+    border-right: 1px solid #2f3e83;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    z-index: 10;
+  }
+  .sidebar img.logo {
+    width: 200px;
+    margin-bottom: 40px;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  nav li {
+    margin: 18px 0;
+  }
+  nav a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  nav a.active, nav a:hover {
+    background: #2f3e83;
+    color: #a0c4ff;
+  }
+
+  /* Main content */
+  main {
+    margin-left: 270px;
+    padding: 60px 60px 80px;
+    max-width: 900px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #74b9ff;
+    display: inline-block;
+    padding-bottom: 6px;
+  }
+  p, li {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #c8d4ffcc;
+  }
+  ul {
+    padding-left: 1.4rem;
+  }
+  li {
+    margin-bottom: 12px;
+  }
+
+  /* Call to action */
+  .cta {
+    margin-top: 50px;
+    background: #2f3e83;
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+  }
+  .cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #a8c8ff;
+  }
+  .cta p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+  }
+  .btn-primary {
+    background: #74b9ff;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 30px;
+    color: #0a0f27;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .btn-primary:hover {
+    background: #a0c4ff;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    main {
+      margin-left: 0;
+      padding: 40px 20px 60px;
+    }
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-right: none;
+      border-bottom: 1px solid #2f3e83;
+    }
+    .sidebar img.logo {
+      width: 140px;
+      margin-bottom: 0;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+    nav li {
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar" role="navigation" aria-label="Primary Navigation">
+  <img src="assets/skyline-logo.png" alt="Skyline Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="advertise.html" class="active" aria-current="page">Advertise</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="charity.html">Charity</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  <h1>Advertise with Skyline</h1>
+  <p>Reach a passionate and growing audience through Skyline’s dynamic online radio network. Whether you’re a brand, artist, or event organizer, our tailored advertising solutions ensure your message hits the right ears at the right time.</p>
+
+  <section aria-labelledby="why-advertise-title">
+    <h2 id="why-advertise-title">Why Choose Skyline?</h2>
+    <ul>
+      <li><strong>Targeted Audience:</strong> Connect with dedicated music lovers and niche communities across multiple genres.</li>
+      <li><strong>Multi-Station Reach:</strong> Advertise on one or several of our popular stations for maximum exposure.</li>
+      <li><strong>Flexible Packages:</strong> From short spots to long-term campaigns, customize your advertising to suit your goals and budget.</li>
+      <li><strong>Professional Support:</strong> Our dedicated team helps you create impactful ads and track your campaign success.</li>
+      <li><strong>Event Sponsorships:</strong> Partner with us for exclusive event promotions and live show sponsorships.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="advertising-options-title">
+    <h2 id="advertising-options-title">Advertising Options</h2>
+    <ul>
+      <li><strong>Audio Spots:</strong> 15, 30, or 60-second commercials produced or uploaded by you.</li>
+      <li><strong>Sponsored Shows:</strong> Brand a specific show or segment with custom messaging and shoutouts.</li>
+      <li><strong>Banner Ads:</strong> Featured placement on station websites and player pages.</li>
+      <li><strong>Social Media Campaigns:</strong> Amplify your ads across Skyline’s social channels.</li>
+      <li><strong>Custom Packages:</strong> Mix and match all options to fit your unique marketing needs.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="getting-started-title">
+    <h2 id="getting-started-title">Getting Started</h2>
+    <p>We make the advertising process seamless and effective. Just reach out with your objectives and budget, and we’ll build a custom proposal that delivers results.</p>
+  </section>
+
+  <section class="cta" aria-label="Contact us to advertise">
+    <h3>Ready to Grow Your Brand with Skyline?</h3>
+    <p>Contact our advertising team today to discuss opportunities and get a tailored plan.</p>
+    <button class="btn-primary" onclick="location.href='contact.html'">Contact Us</button>
+  </section>
+</main>
+
+</body>
+</html>
