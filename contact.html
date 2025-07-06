@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skyline - Contact Us</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0f27;
+    color: #f1f5ff;
+    overflow-x: hidden;
+  }
+  a {
+    color: #74b9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #a0c4ff;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 270px;
+    height: 100%;
+    background: rgba(6, 19, 59, 0.95);
+    border-right: 1px solid #2f3e83;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    z-index: 10;
+  }
+  .sidebar img.logo {
+    width: 200px;
+    margin-bottom: 40px;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  nav li {
+    margin: 18px 0;
+  }
+  nav a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  nav a.active, nav a:hover {
+    background: #2f3e83;
+    color: #a0c4ff;
+  }
+
+  /* Main content */
+  main {
+    margin-left: 270px;
+    padding: 60px 60px 80px;
+    max-width: 900px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #c8d4ffcc;
+    margin-bottom: 40px;
+  }
+
+  form {
+    background: #1f2a67;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #1e50ff44;
+  }
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #a0c4ff;
+    font-size: 1.1rem;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.1rem;
+    background: #0a0f27;
+    color: #e1eaff;
+    resize: vertical;
+    transition: background-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    background: #15216e;
+    outline: none;
+  }
+  textarea {
+    min-height: 120px;
+  }
+  button[type="submit"] {
+    background: #74b9ff;
+    color: #0a0f27;
+    border: none;
+    padding: 16px 48px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover {
+    background: #a0c4ff;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    main {
+      margin-left: 0;
+      padding: 40px 20px 60px;
+    }
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-right: none;
+      border-bottom: 1px solid #2f3e83;
+    }
+    .sidebar img.logo {
+      width: 140px;
+      margin-bottom: 0;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+    nav li {
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar" role="navigation" aria-label="Primary Navigation">
+  <img src="assets/skyline-logo.png" alt="Skyline Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="advertise.html">Advertise</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+      <li><a href="charity.html">Charity</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  <h1>Contact Us</h1>
+  <p>We’d love to hear from you! Whether you’re interested in advertising opportunities, partnership inquiries, or general questions, please use the form below to reach out. Our team will get back to you as soon as possible.</p>
+
+  <form action="mailto:info@skyline.com" method="post" enctype="text/plain" aria-label="Contact form">
+    <label for="name">Name <span aria-hidden="true" style="color:#ff6b6b">*</span></label>
+    <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name" />
+
+    <label for="email">Email <span aria-hidden="true" style="color:#ff6b6b">*</span></label>
+    <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+
+    <label for="message">Message <span aria-hidden="true" style="color:#ff6b6b">*</span></label>
+    <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</main>
+
+</body>
+</html>
