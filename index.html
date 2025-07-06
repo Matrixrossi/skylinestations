@@ -59,7 +59,7 @@
     }
 
     nav .logo img {
-      height: 70px; /* Increased size */
+      height: 110px; /* Bigger logo height */
       width: auto;
       display: block;
     }
@@ -75,6 +75,7 @@
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
+      line-height: 110px; /* align vertically with bigger logo */
     }
 
     section {
@@ -191,12 +192,15 @@
       .hero h1 {
         font-size: 2.2rem;
       }
+      nav ul li a {
+        line-height: normal;
+      }
     }
   </style>
 </head>
 <body>
   <video autoplay muted loop class="bg-video">
-    <source src="assets/videos/background.mp4" type="video/mp4">
+    <source src="assets/videos/background.mp4" type="video/mp4" />
   </video>
   <div class="overlay"></div>
 
@@ -226,12 +230,12 @@
     <h2 class="section-title">Our Stations</h2>
     <div class="grid">
       <div class="card">
-        <img src="assets/images/rosss-radio-logo.png" alt="Ross's Radio">
+        <img src="assets/images/rosss-radio-logo.png" alt="Ross's Radio" />
         <h3>Ross’s Radio</h3>
         <p>Club classics and feel-good anthems — the weekend begins here.</p>
       </div>
       <div class="card">
-        <img src="assets/images/timeless-fm-logo.png" alt="Timeless FM">
+        <img src="assets/images/timeless-fm-logo.png" alt="Timeless FM" />
         <h3>Timeless FM</h3>
         <p>Relive the hits that defined generations — music that never ages.</p>
       </div>
