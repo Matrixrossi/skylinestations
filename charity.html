@@ -1,276 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skylines Reach For The Skyline | Charity - Skyline Network</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset and base */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #121212;
-      color: #eee;
-      display: flex;
-      min-height: 100vh;
-    }
-    a {
-      color: #5bc0f8;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #83d4ff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skyline - Charity</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0f27;
+    color: #f1f5ff;
+    overflow-x: hidden;
+  }
+  a {
+    color: #74b9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #a0c4ff;
+  }
 
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: #0f1011;
-      border-right: 1px solid #222;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1.5rem;
-      position: fixed;
-      height: 100vh;
-    }
-    .sidebar .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #5bc0f8;
-      margin-bottom: 2rem;
-      letter-spacing: 3px;
-    }
-    .sidebar nav a {
-      display: block;
-      padding: 0.75rem 0;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #999;
-      border-left: 4px solid transparent;
-      margin-bottom: 0.8rem;
-    }
-    .sidebar nav a.active,
-    .sidebar nav a:hover {
-      color: #5bc0f8;
-      border-left-color: #5bc0f8;
-      font-weight: 700;
-    }
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 270px;
+    height: 100%;
+    background: rgba(6, 19, 59, 0.95);
+    border-right: 1px solid #2f3e83;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    z-index: 10;
+  }
+  .sidebar img.logo {
+    width: 200px;
+    margin-bottom: 40px;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  nav li {
+    margin: 18px 0;
+  }
+  nav a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  nav a.active, nav a:hover {
+    background: #2f3e83;
+    color: #a0c4ff;
+  }
 
-    /* Main content */
+  /* Main content */
+  main {
+    margin-left: 270px;
+    padding: 60px 60px 80px;
+    max-width: 900px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #74b9ff;
+    display: inline-block;
+    padding-bottom: 6px;
+  }
+  p, ul, li {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #c8d4ffcc;
+  }
+  ul {
+    padding-left: 1.4rem;
+    margin-bottom: 30px;
+  }
+  li {
+    margin-bottom: 12px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
     main {
-      margin-left: 260px;
-      padding: 3rem 4rem;
-      max-width: 1000px;
-      width: 100%;
+      margin-left: 0;
+      padding: 40px 20px 60px;
     }
-
-    /* Hero */
-    .hero {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      flex: 1 1 300px;
-    }
-    .hero-text h1 {
-      font-size: 2.8rem;
-      color: #5bc0f8;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-    }
-    .hero-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ccc;
-    }
-    .hero-image {
-      flex: 1 1 300px;
-      max-width: 320px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 15px #5bc0f8aa;
-      background: linear-gradient(135deg, #0a1224, #1c2331);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .hero-image img {
+    .sidebar {
+      position: relative;
       width: 100%;
       height: auto;
-      display: block;
-      border-radius: 12px;
-      object-fit: contain;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-right: none;
+      border-bottom: 1px solid #2f3e83;
     }
-
-    /* Sections */
-    section {
-      margin-bottom: 3.5rem;
+    .sidebar img.logo {
+      width: 140px;
+      margin-bottom: 0;
     }
-    section h2 {
-      font-size: 2rem;
-      color: #5bc0f8;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      border-left: 4px solid #5bc0f8;
-      padding-left: 0.8rem;
+    nav ul {
+      display: flex;
+      gap: 20px;
     }
-    section p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #ddd;
-      margin-bottom: 1.3rem;
+    nav li {
+      margin: 0;
     }
-    ul {
-      list-style: none;
-      padding-left: 1.3rem;
-      color: #ddd;
-      font-size: 1rem;
-      margin-bottom: 1.3rem;
-    }
-    ul li::before {
-      content: '✔';
-      color: #5bc0f8;
-      margin-right: 0.5rem;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      background: #5bc0f8;
-      color: #121212;
-      font-weight: 700;
-      padding: 0.65rem 1.6rem;
-      border-radius: 30px;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      cursor: pointer;
-      border: none;
-      transition: background 0.3s ease;
-      margin-right: 1rem;
-      margin-top: 1rem;
-    }
-    .btn:hover {
-      background: #83d4ff;
-    }
-
-    /* Contact info */
-    .contact-info {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #bbb;
-      margin-top: 0.7rem;
-    }
-    .contact-info a {
-      color: #5bc0f8;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      main {
-        padding: 2rem 1.5rem;
-        margin-left: 0;
-      }
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        border-right: none;
-        flex-direction: row;
-        padding: 1rem 2rem;
-        justify-content: space-between;
-      }
-      .sidebar nav {
-        display: flex;
-        gap: 2rem;
-      }
-      .hero {
-        flex-direction: column;
-      }
-      .hero-image {
-        max-width: 100%;
-        width: 100%;
-        margin-top: 1rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <aside class="sidebar" role="navigation" aria-label="Main Navigation">
-    <div class="logo">Skyline</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="charity.html" class="active">Charity</a>
-    </nav>
-  </aside>
 
-  <main role="main">
-    <section class="hero" aria-label="Charity Hero Section">
-      <div class="hero-text">
-        <h1>Skylines Reach For The Skyline</h1>
-        <p>
-          Our charity initiative dedicated to uplifting communities through music, creativity, and opportunity. We believe in giving back and reaching higher together.
-        </p>
-      </div>
-      <div class="hero-image" role="img" aria-label="Mascot image for Skylines Reach For The Skyline">
-        <img src="assets/images/mascot.png" alt="Skyline Charity Mascot" />
-      </div>
-    </section>
+<aside class="sidebar" role="navigation" aria-label="Primary Navigation">
+  <img src="assets/skyline-logo.png" alt="Skyline Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="advertise.html">Advertise</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="charity.html" class="active" aria-current="page">Charity</a></li>
+    </ul>
+  </nav>
+</aside>
 
-    <section aria-labelledby="mission-heading">
-      <h2 id="mission-heading">Our Mission</h2>
-      <p>
-        To empower individuals by providing access to music education, creative outlets, and support programs that inspire hope and build skills for a brighter future.
-      </p>
-    </section>
+<main>
+  <h1>Skyline Charity</h1>
+  <p>At Skyline, we believe in giving back to the communities that inspire and support us. Our charity initiatives focus on making a positive impact through music, education, and social outreach.</p>
 
-    <section aria-labelledby="programs-heading">
-      <h2 id="programs-heading">What We Do</h2>
-      <p>
-        We run multiple programs tailored to bring music and community support to those who need it most:
-      </p>
-      <ul>
-        <li>Music workshops for young people and underprivileged communities</li>
-        <li>Donations of instruments and equipment to schools and community centers</li>
-        <li>Partnerships with local artists for mentorship and inspiration</li>
-        <li>Annual charity concerts to raise awareness and funds</li>
-      </ul>
-    </section>
+  <section aria-labelledby="charity-mission">
+    <h2 id="charity-mission">Our Mission</h2>
+    <p>We are committed to supporting causes that empower underprivileged youth, promote mental health awareness, and encourage creativity through music and arts programs.</p>
+  </section>
 
-    <section aria-labelledby="get-involved-heading">
-      <h2 id="get-involved-heading">How to Get Involved</h2>
-      <p>
-        We welcome all kinds of support. Whether you want to donate, volunteer, or partner with us, your involvement makes a huge difference.
-      </p>
-      <button class="btn" onclick="window.location.href='mailto:charity@skyline.com?subject=Charity Involvement'">Contact Us</button>
-      <button class="btn" onclick="window.open('https://donate.skyline.com', '_blank')">Donate Now</button>
-    </section>
+  <section aria-labelledby="ways-to-help">
+    <h2 id="ways-to-help">How You Can Help</h2>
+    <ul>
+      <li><strong>Donations:</strong> Contributions help fund our charity projects and events.</li>
+      <li><strong>Volunteering:</strong> Join our team to help organize events and outreach programs.</li>
+      <li><strong>Partnerships:</strong> Collaborate with us to expand the reach and impact of our initiatives.</li>
+      <li><strong>Awareness:</strong> Share our mission and campaigns on social media and within your networks.</li>
+    </ul>
+  </section>
 
-    <section aria-labelledby="impact-heading">
-      <h2 id="impact-heading">Impact Stories</h2>
-      <p>
-        <em>"Thanks to Skylines Reach For The Skyline, I learned to play guitar and found a new passion that keeps me focused and hopeful." — Jamie L.</em>
-      </p>
-      <p>
-        <em>"The workshops and mentorship programs changed the lives of many kids in our neighborhood. It's truly inspiring!" — Maria P.</em>
-      </p>
-    </section>
+  <section aria-labelledby="get-involved">
+    <h2 id="get-involved">Get Involved</h2>
+    <p>If you'd like to learn more or get involved, please reach out to us through the <a href="contact.html">Contact page</a>. Together, we can make a difference.</p>
+  </section>
+</main>
 
-    <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact & Follow Us</h2>
-      <p class="contact-info">
-        Email: <a href="mailto:charity@skyline.com">charity@skyline.com</a><br />
-        Twitter: <a href="https://twitter.com/SkylineCharity" target="_blank" rel="noopener">@SkylineCharity</a><br />
-        Instagram: <a href="https://instagram.com/SkylineCharity" target="_blank" rel="noopener">@SkylineCharity</a>
-      </p>
-    </section>
-  </main>
 </body>
 </html>
