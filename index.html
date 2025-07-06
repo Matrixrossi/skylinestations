@@ -1,259 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skyline Network - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
-  <style>
-    /* Reset and base */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #121212;
-      color: #eee;
-      display: flex;
-      min-height: 100vh;
-    }
-    a {
-      color: #5bc0f8;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover {
-      color: #83d4ff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skyline - Home</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0f27;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  a {
+    color: #74b9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #a0c4ff;
+  }
 
-    /* Sidebar */
-    .sidebar {
-      width: 260px;
-      background: #0f1011;
-      border-right: 1px solid #222;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 1.5rem;
-      position: fixed;
-      height: 100vh;
-    }
-    .sidebar .logo {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #5bc0f8;
-      margin-bottom: 2rem;
-      letter-spacing: 3px;
-    }
-    .sidebar nav a {
-      display: block;
-      padding: 0.75rem 0;
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: #999;
-      border-left: 4px solid transparent;
-      margin-bottom: 0.8rem;
-    }
-    .sidebar nav a.active,
-    .sidebar nav a:hover {
-      color: #5bc0f8;
-      border-left-color: #5bc0f8;
-      font-weight: 700;
-    }
+  /* Background video */
+  #bg-video {
+    position: fixed;
+    right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.45) saturate(1.2);
+  }
 
-    /* Main content */
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 270px;
+    height: 100%;
+    background: rgba(6, 19, 59, 0.9);
+    border-right: 1px solid #2f3e83;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+  }
+  .sidebar img.logo {
+    width: 200px;
+    margin-bottom: 40px;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  nav li {
+    margin: 18px 0;
+  }
+  nav a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  nav a.active, nav a:hover {
+    background: #2f3e83;
+    color: #a0c4ff;
+  }
+
+  /* Main content wrapper */
+  main {
+    margin-left: 270px;
+    padding: 50px 60px;
+    max-width: 1100px;
+  }
+
+  /* Hero Section */
+  .hero {
+    margin-bottom: 70px;
+  }
+  .hero h1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.1;
+  }
+  .hero p {
+    font-size: 1.35rem;
+    margin-bottom: 30px;
+    color: #c1d3ffcc;
+  }
+  .hero .btn-primary {
+    background: #4a90e2;
+    padding: 15px 35px;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+  }
+  .hero .btn-primary:hover {
+    background: #74b9ff;
+  }
+
+  /* Section styles */
+  section {
+    margin-bottom: 80px;
+  }
+  section h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #74b9ff;
+    display: inline-block;
+    padding-bottom: 6px;
+  }
+  section p {
+    font-size: 1.15rem;
+    line-height: 1.55;
+    max-width: 900px;
+    color: #c8d4ffdd;
+  }
+
+  /* Stations cards */
+  .stations {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .station-card {
+    background: rgba(255 255 255 / 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 0 12px rgb(116 185 255 / 0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .station-card:hover {
+    transform: translateY(-8px);
+  }
+  .station-card img {
+    max-width: 180px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.35));
+  }
+  .station-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    color: #a8c8ff;
+  }
+  .station-card p {
+    font-size: 1rem;
+    color: #c0d0ffcc;
+  }
+
+  /* Benefits list */
+  .benefits ul {
+    list-style: none;
+    padding-left: 1.2rem;
+    max-width: 600px;
+  }
+  .benefits li {
+    margin-bottom: 14px;
+    font-size: 1.15rem;
+    position: relative;
+    padding-left: 28px;
+    color: #d0dfff;
+  }
+  .benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #74b9ff;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  /* Events */
+  .events ul {
+    list-style: none;
+    padding-left: 0;
+    max-width: 600px;
+  }
+  .events li {
+    background: rgba(116, 185, 255, 0.1);
+    margin-bottom: 16px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #a3c1ff;
+    box-shadow: inset 0 0 8px rgb(116 185 255 / 0.3);
+  }
+
+  /* Get Involved Callout */
+  .get-involved {
+    background: #2f3e83;
+    padding: 35px 50px;
+    border-radius: 16px;
+    max-width: 700px;
+    text-align: center;
+  }
+  .get-involved h2 {
+    color: #b6caff;
+    margin-bottom: 20px;
+  }
+  .get-involved p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #d0d8ff;
+  }
+  .get-involved a.btn-primary {
+    background: #74b9ff;
+    color: #0a0f27;
+    font-weight: 700;
+    padding: 14px 42px;
+    border-radius: 30px;
+    font-size: 1.15rem;
+    transition: background-color 0.3s ease;
+  }
+  .get-involved a.btn-primary:hover {
+    background: #a0c4ff;
+    color: #0a0f27;
+  }
+
+  /* Responsive */
+  @media (max-width: 1000px) {
     main {
-      margin-left: 260px;
-      padding: 3rem 4rem;
-      max-width: 1000px;
-      width: 100%;
+      margin-left: 0;
+      padding: 40px 20px;
     }
-
-    /* Hero */
-    .hero {
-      display: flex;
-      align-items: center;
-      gap: 3rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-    .hero-text {
-      flex: 1 1 300px;
-    }
-    .hero-text h1 {
-      font-size: 2.8rem;
-      color: #5bc0f8;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-    }
-    .hero-text p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ccc;
-    }
-    .hero-image {
-      flex: 1 1 300px;
-      max-width: 320px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 15px #5bc0f8aa;
-      background: linear-gradient(135deg, #0a1224, #1c2331);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .hero-image img {
+    .sidebar {
+      position: relative;
       width: 100%;
       height: auto;
-      display: block;
-      border-radius: 12px;
-      object-fit: contain;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-right: none;
+      border-bottom: 1px solid #2f3e83;
     }
-
-    /* Sections */
-    section {
-      margin-bottom: 3.5rem;
+    .sidebar img.logo {
+      width: 140px;
+      margin-bottom: 0;
     }
-    section h2 {
-      font-size: 2rem;
-      color: #5bc0f8;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      border-left: 4px solid #5bc0f8;
-      padding-left: 0.8rem;
+    nav ul {
+      display: flex;
+      gap: 20px;
     }
-    section p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #ddd;
-      margin-bottom: 1.3rem;
+    nav li {
+      margin: 0;
     }
-    ul {
-      list-style: none;
-      padding-left: 1.3rem;
-      color: #ddd;
-      font-size: 1rem;
-      margin-bottom: 1.3rem;
+    .stations {
+      flex-direction: column;
+      align-items: center;
     }
-    ul li::before {
-      content: '✔';
-      color: #5bc0f8;
-      margin-right: 0.5rem;
+    .station-card {
+      width: 90%;
     }
-
-    /* Buttons */
-    .btn {
-      display: inline-block;
-      background: #5bc0f8;
-      color: #121212;
-      font-weight: 700;
-      padding: 0.65rem 1.6rem;
-      border-radius: 30px;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      cursor: pointer;
-      border: none;
-      transition: background 0.3s ease;
-      margin-right: 1rem;
-      margin-top: 1rem;
-    }
-    .btn:hover {
-      background: #83d4ff;
-    }
-
-    /* Contact info */
-    .contact-info {
-      font-size: 1rem;
-      line-height: 1.5;
-      color: #bbb;
-      margin-top: 0.7rem;
-    }
-    .contact-info a {
-      color: #5bc0f8;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      main {
-        padding: 2rem 1.5rem;
-        margin-left: 0;
-      }
-      .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        border-right: none;
-        flex-direction: row;
-        padding: 1rem 2rem;
-        justify-content: space-between;
-      }
-      .sidebar nav {
-        display: flex;
-        gap: 2rem;
-      }
-      .hero {
-        flex-direction: column;
-      }
-      .hero-image {
-        max-width: 100%;
-        width: 100%;
-        margin-top: 1rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <aside class="sidebar" role="navigation" aria-label="Main Navigation">
-    <div class="logo">Skyline</div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="charity.html">Charity</a>
-    </nav>
-  </aside>
 
-  <main role="main">
-    <section class="hero" aria-label="Hero Section">
-      <div class="hero-text">
-        <h1>Welcome to Skyline Network</h1>
-        <p>We are a professional network dedicated to online radio stations bringing music, culture, and community together. Join us and explore our stations, events, and more.</p>
-      </div>
-      <div class="hero-image" role="img" aria-label="Skyline logo">
-        <img src="assets/images/skyline-logo.png" alt="Skyline Network Logo" />
-      </div>
-    </section>
+<video autoplay muted loop id="bg-video" playsinline>
+  <source src="assets/videos/background.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
 
-    <section aria-labelledby="stations-heading">
-      <h2 id="stations-heading">Our Stations</h2>
-      <p>Discover our curated stations, each with a unique vibe and carefully crafted playlists:</p>
-      <ul>
-        <li><strong>Ross's Radio</strong> – Feel-good tunes and big club classics every weekend.</li>
-        <li><strong>Timeless FM</strong> – A timeless mix of classic hits and contemporary favourites.</li>
-      </ul>
-      <div style="display:flex;gap:20px;flex-wrap:wrap; margin-top: 1rem;">
-        <img src="assets/images/rosss-radio-logo.png" alt="Ross's Radio Logo" style="max-width:150px; border-radius:8px; box-shadow: 0 0 15px #5bc0f8aa;" />
-        <img src="assets/images/timeless-fm-logo.png" alt="Timeless FM Logo" style="max-width:150px; border-radius:8px; box-shadow: 0 0 15px #5bc0f8aa;" />
-      </div>
-    </section>
+<aside class="sidebar" role="navigation" aria-label="Primary Navigation">
+  <img src="assets/skyline-logo.png" alt="Skyline Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="advertise.html">Advertise</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="charity.html">Charity</a></li>
+    </ul>
+  </nav>
+</aside>
 
-    <section aria-labelledby="get-involved-heading">
-      <h2 id="get-involved-heading">Get Involved</h2>
-      <p>Become a part of the Skyline family. Whether you’re a listener, DJ, or partner, there’s a place for you here.</p>
-      <button class="btn" onclick="window.location.href='mailto:info@skyline.com?subject=Get Involved with Skyline'">Contact Us</button>
-    </section>
+<main>
+  <section class="hero" aria-label="Introduction">
+    <h1>Welcome to Skyline</h1>
+    <p>Your premier network for professional online radio stations — connecting communities, DJs, and listeners with passion and quality.</p>
+    <button class="btn-primary" onclick="location.href='advertise.html'">Advertise With Us</button>
+  </section>
 
-    <section aria-labelledby="events-heading">
-      <h2 id="events-heading">Upcoming Events</h2>
-      <p>We regularly host live DJ sets, charity fundraisers, and community events. Stay tuned for the latest updates and join us live.</p>
-    </section>
+  <section aria-labelledby="about-title">
+    <h2 id="about-title">About Skyline</h2>
+    <p>At Skyline, we believe in creating a vibrant, professional online radio network that uplifts independent stations and provides listeners with unparalleled music experiences. Our commitment is to quality, innovation, and community engagement.</p>
+  </section>
 
-    <section aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact & Follow Us</h2>
-      <p class="contact-info">
-        Email: <a href="mailto:info@skyline.com">info@skyline.com</a><br />
-        Twitter: <a href="https://twitter.com/SkylineNetwork" target="_blank" rel="noopener">@SkylineNetwork</a><br />
-        Instagram: <a href="https://instagram.com/SkylineNetwork" target="_blank" rel="noopener">@SkylineNetwork</a>
-      </p>
-    </section>
-  </main>
+  <section aria-labelledby="stations-title">
+    <h2 id="stations-title">Our Stations</h2>
+    <div class="stations">
+      <article class="station-card" aria-label="Ross's Radio Station">
+        <img src="assets/rosss-radio-logo.png" alt="Ross's Radio Logo" />
+        <h3>Ross's Radio</h3>
+        <p>Feel-good tunes for your every mood, with live shows, guest DJs, and community events. A station with heart.</p>
+      </article>
+      <article class="station-card" aria-label="Timeless FM Station">
+        <img src="assets/timeless-fm-logo.png" alt="Timeless FM Logo" />
+        <h3>Timeless FM</h3>
+        <p>Classic hits and unforgettable tracks that never go out of style. Bringing nostalgia to your ears 24/7.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="why-join-title" class="benefits">
+    <h2 id="why-join-title">Why Join Skyline?</h2>
+    <ul>
+      <li>Access to a growing community of music lovers and broadcasters.</li>
+      <li>Professional branding and promotional support.</li>
+      <li>Innovative tools to help you grow your audience.</li>
+      <li>Events, collaborations, and exclusive content.</li>
+      <li>Dedicated support and networking opportunities.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="events-title" class="events">
+    <h2 id="events-title">Upcoming Events</h2>
+    <ul>
+      <li>Summer Club Classics - August 15, 2025</li>
+      <li>Live DJ Battles - September 10, 2025</li>
+      <li>Community Music Festival - October 22, 2025</li>
+    </ul>
+  </section>
+
+  <section class="get-involved" aria-label="Get involved with Skyline">
+    <h2>Get Involved</h2>
+    <p>Interested in partnering, advertising, or becoming a DJ with Skyline? We’d love to hear from you.</p>
+    <a href="contact.html" class="btn-primary">Contact Us</a>
+  </section>
+</main>
+
 </body>
 </html>
