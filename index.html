@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skyline Stations</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Skyline Radio Network</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * {
@@ -18,7 +15,7 @@
 
     body, html {
       height: 100%;
-      overflow: hidden;
+      scroll-behavior: smooth;
     }
 
     .video-background {
@@ -32,160 +29,249 @@
     }
 
     .overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 30, 60, 0.7);
-      z-index: 0;
-    }
-
-    header {
-      position: relative;
-      z-index: 1;
-      padding: 2rem;
-      text-align: center;
-      color: #fff;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #cceeff;
-    }
-
-    header p {
-      font-size: 1.25rem;
-      margin-top: 0.5rem;
-      color: #e0f7ff;
+      background: rgba(0, 20, 40, 0.75);
+      z-index: -1;
     }
 
     nav {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
       color: #fff;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: #cceeff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav ul li {
       font-weight: 600;
-      border: 2px solid #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      transition: all 0.3s ease;
     }
 
-    nav a:hover {
-      background-color: #cceeff;
-      color: #001d33;
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
     }
 
-    .stations-section {
-      position: relative;
-      z-index: 1;
+    nav ul li a:hover {
+      color: #cceeff;
+    }
+
+    .section {
+      padding: 6rem 2rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 3rem;
+      justify-content: center;
+      height: 100vh;
+      color: #cceeff;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      max-width: 600px;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background-color: #cceeff;
+      color: #001d33;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #a0dcee;
+    }
+
+    .stations {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 2rem;
+      margin-top: 2rem;
     }
 
     .station-card {
-      background-color: rgba(255, 255, 255, 0.08);
+      background-color: rgba(255, 255, 255, 0.05);
       border: 1px solid #cceeff33;
       border-radius: 16px;
-      padding: 1.5rem 2rem;
-      width: 90%;
-      max-width: 600px;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      transition: transform 0.3s ease, background-color 0.3s ease;
+      padding: 2rem;
+      width: 300px;
+      transition: transform 0.3s, background-color 0.3s;
     }
 
     .station-card:hover {
-      background-color: rgba(255, 255, 255, 0.15);
       transform: translateY(-5px);
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     .station-card img {
-      width: 80px;
-      height: auto;
-      border-radius: 12px;
+      width: 100px;
+      margin-bottom: 1rem;
     }
 
-    .station-card h2 {
+    .station-card h3 {
+      margin-top: 0.5rem;
       color: #cceeff;
-      font-size: 1.5rem;
-      font-weight: 600;
+    }
+
+    .two-column {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 280px;
+      text-align: left;
     }
 
     footer {
-      position: relative;
-      z-index: 1;
-      margin-top: 4rem;
-      padding: 1rem;
-      text-align: center;
+      background-color: #001d33;
       color: #cceeff;
+      padding: 2rem;
+      text-align: center;
       font-size: 0.9rem;
     }
 
-    @media (max-width: 600px) {
-      .station-card {
-        flex-direction: column;
-        text-align: center;
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
       }
 
-      .station-card img {
-        width: 60px;
+      .hero p {
+        font-size: 1rem;
+      }
+
+      nav ul {
+        gap: 1rem;
       }
     }
   </style>
 </head>
-
 <body>
-  <video class="video-background" autoplay muted loop>
+  <video autoplay muted loop class="video-background">
     <source src="assets/videos/background.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-
   <div class="overlay"></div>
 
-  <header>
-    <h1>Skyline Stations</h1>
-    <p>Your home for feel-good and iconic radio brands</p>
-    <nav>
-      <a href="#rosss-radio">Ross's Radio</a>
-      <a href="#timeless-fm">Timeless FM</a>
-    </nav>
-  </header>
+  <nav>
+    <div class="logo">Skyline</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+    </ul>
+  </nav>
 
-  <section class="stations-section">
-    <div class="station-card" id="rosss-radio">
-      <img src="assets/images/rosss-radio-logo.png" alt="Ross's Radio Logo">
-      <div>
-        <h2>Ross's Radio</h2>
-        <p>Feel-good tunes all week long, with Club Classics every Saturday night. The heart of your weekend starts here.</p>
+  <section class="hero">
+    <h1>Welcome to Skyline</h1>
+    <p>The next generation radio network — home to Ross's Radio, Timeless FM, and more to come. We connect voices, vibes, and people worldwide.</p>
+    <a href="#get-involved"><button class="btn">Get Involved</button></a>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Skyline</h2>
+    <div class="two-column">
+      <div class="column">
+        <p>Skyline is a professional online radio network built to bring modern radio into the future. We’re creating a platform that empowers independent stations and passionate hosts to shine.</p>
+        <p>We don’t just stream music. We build communities. Whether it’s club classics, chillout hits, or real talk radio — there’s a place for every voice on Skyline.</p>
       </div>
-    </div>
-
-    <div class="station-card" id="timeless-fm">
-      <img src="assets/images/timeless-fm-logo.png" alt="Timeless FM Logo">
-      <div>
-        <h2>Timeless FM</h2>
-        <p>Where timeless hits live forever. A blend of iconic music for every generation, only on Timeless FM.</p>
+      <div class="column">
+        <p>From smooth branding to pro-level audio tools, we support stations under the Skyline umbrella with the infrastructure and exposure they need to grow.</p>
+        <p>Skyline is for listeners, creators, and anyone who believes radio still matters in 2025 and beyond.</p>
       </div>
     </div>
   </section>
 
+  <section class="section" id="stations">
+    <h2>Our Stations</h2>
+    <div class="stations">
+      <div class="station-card">
+        <img src="assets/images/rosss-radio-logo.png" alt="Ross's Radio Logo">
+        <h3>Ross’s Radio</h3>
+        <p>Feel-good music all week. Club classics every Saturday night. The station that brings positive vibes and big energy.</p>
+      </div>
+      <div class="station-card">
+        <img src="assets/images/timeless-fm-logo.png" alt="Timeless FM Logo">
+        <h3>Timeless FM</h3>
+        <p>Taking you through the decades — timeless classics that never fade. The soundtrack of your life, every day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why">
+    <h2>Why Choose Skyline?</h2>
+    <div class="two-column">
+      <div class="column">
+        <ul>
+          <li>🎙️ Broadcast under a professional brand</li>
+          <li>📡 Reliable infrastructure & player support</li>
+          <li>🌍 Access to a growing community of listeners</li>
+          <li>🎧 Opportunities for DJs, volunteers & hosts</li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul>
+          <li>📈 Help growing your station & audience</li>
+          <li>📱 Featured spots on the Skyline homepage</li>
+          <li>🌐 Easy integration with streaming tools</li>
+          <li>🧠 Creative freedom backed by strong branding</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="get-involved">
+    <h2>Get Involved</h2>
+    <p>Want to host a show? Run a station? Join Skyline as a DJ, manager, or creative contributor.</p>
+    <p>We’re always looking for passionate people who love radio and want to be part of something big.</p>
+    <a href="mailto:contact@skyline.radio"><button class="btn">Contact Us</button></a>
+  </section>
+
   <footer>
-    &copy; 2025 Skyline. All rights reserved.
+    &copy; 2025 Skyline Radio Network. All rights reserved.
   </footer>
 </body>
-
 </html>
