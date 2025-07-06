@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Skyline - About Us</title>
+<style>
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0f27;
+    color: #f1f5ff;
+    overflow-x: hidden;
+  }
+  a {
+    color: #74b9ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover, a:focus {
+    color: #a0c4ff;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 270px;
+    height: 100%;
+    background: rgba(6, 19, 59, 0.95);
+    border-right: 1px solid #2f3e83;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    z-index: 10;
+  }
+  .sidebar img.logo {
+    width: 200px;
+    margin-bottom: 40px;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  nav li {
+    margin: 18px 0;
+  }
+  nav a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+  nav a.active, nav a:hover {
+    background: #2f3e83;
+    color: #a0c4ff;
+  }
+
+  /* Main content */
+  main {
+    margin-left: 270px;
+    padding: 60px 60px 80px;
+    max-width: 900px;
+  }
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 18px;
+    border-bottom: 3px solid #74b9ff;
+    display: inline-block;
+    padding-bottom: 6px;
+  }
+  p, li {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #c8d4ffcc;
+  }
+  ul {
+    padding-left: 1.4rem;
+  }
+  li {
+    margin-bottom: 12px;
+  }
+
+  /* Highlights block */
+  .highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .highlight {
+    background: #1f2a67;
+    padding: 30px 25px;
+    border-radius: 16px;
+    flex: 1 1 250px;
+    box-shadow: 0 0 15px #1e50ff33;
+    transition: background-color 0.3s ease;
+  }
+  .highlight:hover {
+    background: #2f3e83;
+  }
+  .highlight h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: #a0c4ff;
+  }
+  .highlight p {
+    color: #d0deffcc;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    main {
+      margin-left: 0;
+      padding: 40px 20px 60px;
+    }
+    .sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 15px 30px;
+      border-right: none;
+      border-bottom: 1px solid #2f3e83;
+    }
+    .sidebar img.logo {
+      width: 140px;
+      margin-bottom: 0;
+    }
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+    nav li {
+      margin: 0;
+    }
+    .highlights {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+
+<aside class="sidebar" role="navigation" aria-label="Primary Navigation">
+  <img src="assets/skyline-logo.png" alt="Skyline Logo" class="logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="advertise.html">Advertise</a></li>
+      <li><a href="about.html" class="active" aria-current="page">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="charity.html">Charity</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+  <h1>About Skyline</h1>
+  <p>Skyline is a cutting-edge online radio network dedicated to connecting listeners with the best music, voices, and communities. Founded with a passion for quality sound and professional broadcasting, we bring together a collection of diverse stations under one brand — your gateway to great audio experiences.</p>
+
+  <section aria-labelledby="mission-title">
+    <h2 id="mission-title">Our Mission</h2>
+    <p>To provide a world-class online radio experience by fostering creativity, supporting artists and broadcasters, and offering listeners a seamless, vibrant way to enjoy music and culture.</p>
+  </section>
+
+  <section aria-labelledby="values-title">
+    <h2 id="values-title">Our Core Values</h2>
+    <ul>
+      <li><strong>Professionalism:</strong> We maintain high standards in broadcasting, customer service, and partnership.</li>
+      <li><strong>Community:</strong> Building strong, inclusive communities through our stations and events.</li>
+      <li><strong>Innovation:</strong> Continuously improving with technology and creative content to stay ahead.</li>
+      <li><strong>Integrity:</strong> Honest, transparent, and trustworthy in everything we do.</li>
+      <li><strong>Passion:</strong> Driven by love for music and connection.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="team-title">
+    <h2 id="team-title">Meet the Team</h2>
+    <p>Our dedicated team is made up of passionate broadcasters, tech experts, and creative minds who work around the clock to deliver the best experience for our listeners and partners.</p>
+  </section>
+
+  <section class="highlights" aria-label="Company Highlights">
+    <article class="highlight">
+      <h3>Over 50,000 Listeners Monthly</h3>
+      <p>Our network continues to grow, reaching tens of thousands of music lovers worldwide every month.</p>
+    </article>
+    <article class="highlight">
+      <h3>Multiple Unique Stations</h3>
+      <p>From club classics to indie beats, we cover a wide range of genres to satisfy diverse tastes.</p>
+    </article>
+    <article class="highlight">
+      <h3>Community Events</h3>
+      <p>We organize and sponsor events that bring our listeners and artists together.</p>
+    </article>
+    <article class="highlight">
+      <h3>24/7 Streaming</h3>
+      <p>Nonstop music and shows, anytime and anywhere, across devices.</p>
+    </article>
+  </section>
+</main>
+
+</body>
+</html>
