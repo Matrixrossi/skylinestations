@@ -6,6 +6,13 @@
   <title>Skyline Radio Network</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --sky: #cceeff;
+      --dark: #001d33;
+      --glass: rgba(0, 29, 51, 0.7);
+      --white: #ffffff;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,18 +21,19 @@
     }
 
     body, html {
-      height: 100%;
       scroll-behavior: smooth;
+      background-color: var(--dark);
+      color: var(--white);
     }
 
-    .video-background {
+    video.bg-video {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      z-index: -1;
+      z-index: -2;
     }
 
     .overlay {
@@ -34,18 +42,17 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 20, 40, 0.75);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,29,51,0.95));
       z-index: -1;
     }
 
     nav {
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      padding: 1rem 2rem;
-      position: sticky;
+      background-color: var(--glass);
+      padding: 1.2rem 2rem;
+      position: fixed;
       top: 0;
-      z-index: 10;
+      z-index: 999;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -54,7 +61,7 @@
     nav .logo {
       font-weight: 800;
       font-size: 1.5rem;
-      color: #cceeff;
+      color: var(--sky);
     }
 
     nav ul {
@@ -63,138 +70,132 @@
       gap: 2rem;
     }
 
-    nav ul li {
+    nav ul li a {
+      color: var(--white);
+      text-decoration: none;
       font-weight: 600;
     }
 
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #cceeff;
-    }
-
-    .section {
-      padding: 6rem 2rem;
-      text-align: center;
-      color: #fff;
+    section {
+      padding: 6rem 2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: #cceeff;
-      text-shadow: 1px 1px 3px #000;
+      text-align: center;
+      padding-top: 8rem;
+      padding-bottom: 6rem;
+      color: var(--sky);
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 800;
     }
 
     .hero p {
       font-size: 1.2rem;
       margin-top: 1rem;
-      max-width: 600px;
+      max-width: 700px;
+      margin-inline: auto;
     }
 
     .btn {
+      display: inline-block;
       margin-top: 2rem;
       padding: 0.75rem 2rem;
-      background-color: #cceeff;
-      color: #001d33;
+      background-color: var(--sky);
+      color: var(--dark);
       font-weight: 600;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #a0dcee;
+      background-color: #a8dbf2;
     }
 
-    .stations {
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: var(--sky);
+    }
+
+    .grid {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 2rem;
+      justify-content: center;
       margin-top: 2rem;
     }
 
-    .station-card {
+    .card {
       background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid #cceeff33;
+      border: 1px solid #cceeff22;
       border-radius: 16px;
       padding: 2rem;
       width: 300px;
-      transition: transform 0.3s, background-color 0.3s;
+      text-align: center;
+      transition: transform 0.3s;
     }
 
-    .station-card:hover {
+    .card:hover {
       transform: translateY(-5px);
-      background-color: rgba(255, 255, 255, 0.1);
     }
 
-    .station-card img {
+    .card img {
       width: 100px;
       margin-bottom: 1rem;
     }
 
-    .station-card h3 {
-      margin-top: 0.5rem;
-      color: #cceeff;
+    .card h3 {
+      color: var(--sky);
+      margin-bottom: 0.5rem;
     }
 
-    .two-column {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
-      justify-content: center;
       margin-top: 2rem;
-    }
-
-    .column {
-      flex: 1;
-      min-width: 280px;
       text-align: left;
     }
 
+    .benefit-box {
+      background: rgba(255,255,255,0.04);
+      padding: 1.5rem;
+      border-left: 4px solid var(--sky);
+      border-radius: 12px;
+    }
+
+    .benefit-box h4 {
+      color: var(--sky);
+      margin-bottom: 0.5rem;
+    }
+
     footer {
-      background-color: #001d33;
-      color: #cceeff;
-      padding: 2rem;
+      background-color: var(--glass);
       text-align: center;
+      padding: 2rem;
+      color: var(--sky);
       font-size: 0.9rem;
+      margin-top: 4rem;
     }
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 2rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      nav ul {
-        gap: 1rem;
+        font-size: 2.2rem;
       }
     }
   </style>
 </head>
 <body>
-  <video autoplay muted loop class="video-background">
+  <video autoplay muted loop class="bg-video">
     <source src="assets/videos/background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
   </video>
   <div class="overlay"></div>
 
@@ -207,67 +208,63 @@
 
   <section class="hero">
     <h1>Welcome to Skyline</h1>
-    <p>The next generation radio network — home to Ross's Radio, Timeless FM, and more to come. We connect voices, vibes, and people worldwide.</p>
-    <a href="#get-involved"><button class="btn">Get Involved</button></a>
+    <p>Skyline is your professional home for online radio. From iconic club classics to timeless hits — we empower digital stations and creators across the UK and beyond.</p>
+    <a href="#get-involved" class="btn">Get Involved</a>
   </section>
 
-  <section class="section" id="about">
-    <h2>About Skyline</h2>
-    <div class="two-column">
-      <div class="column">
-        <p>Skyline is a professional online radio network built to bring modern radio into the future. We’re creating a platform that empowers independent stations and passionate hosts to shine.</p>
-        <p>We don’t just stream music. We build communities. Whether it’s club classics, chillout hits, or real talk radio — there’s a place for every voice on Skyline.</p>
-      </div>
-      <div class="column">
-        <p>From smooth branding to pro-level audio tools, we support stations under the Skyline umbrella with the infrastructure and exposure they need to grow.</p>
-        <p>Skyline is for listeners, creators, and anyone who believes radio still matters in 2025 and beyond.</p>
-      </div>
-    </div>
+  <section id="about">
+    <h2 class="section-title">About Skyline</h2>
+    <p style="max-width: 800px; margin: 0 auto; text-align: center;">
+      We are a network of passionate broadcasters, DJs, producers and creators who believe in the power of radio to unite, energize, and entertain. Skyline is built for those who take their craft seriously — and want a platform that matches their ambition.
+    </p>
   </section>
 
-  <section class="section" id="stations">
-    <h2>Our Stations</h2>
-    <div class="stations">
-      <div class="station-card">
-        <img src="assets/images/rosss-radio-logo.png" alt="Ross's Radio Logo">
+  <section id="stations">
+    <h2 class="section-title">Our Stations</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/images/rosss-radio-logo.png" alt="Ross's Radio">
         <h3>Ross’s Radio</h3>
-        <p>Feel-good music all week. Club classics every Saturday night. The station that brings positive vibes and big energy.</p>
+        <p>Club classics and feel-good anthems — the weekend begins here.</p>
       </div>
-      <div class="station-card">
-        <img src="assets/images/timeless-fm-logo.png" alt="Timeless FM Logo">
+      <div class="card">
+        <img src="assets/images/timeless-fm-logo.png" alt="Timeless FM">
         <h3>Timeless FM</h3>
-        <p>Taking you through the decades — timeless classics that never fade. The soundtrack of your life, every day.</p>
+        <p>Relive the hits that defined generations — music that never ages.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="why">
-    <h2>Why Choose Skyline?</h2>
-    <div class="two-column">
-      <div class="column">
-        <ul>
-          <li>🎙️ Broadcast under a professional brand</li>
-          <li>📡 Reliable infrastructure & player support</li>
-          <li>🌍 Access to a growing community of listeners</li>
-          <li>🎧 Opportunities for DJs, volunteers & hosts</li>
-        </ul>
+  <section id="why">
+    <h2 class="section-title">Why Join Skyline?</h2>
+    <div class="benefits">
+      <div class="benefit-box">
+        <h4>📡 Broadcast With Impact</h4>
+        <p>Gain visibility and legitimacy under a respected network.</p>
       </div>
-      <div class="column">
-        <ul>
-          <li>📈 Help growing your station & audience</li>
-          <li>📱 Featured spots on the Skyline homepage</li>
-          <li>🌐 Easy integration with streaming tools</li>
-          <li>🧠 Creative freedom backed by strong branding</li>
-        </ul>
+      <div class="benefit-box">
+        <h4>🔧 Full Station Support</h4>
+        <p>From tech to branding, we’ve got your back.</p>
+      </div>
+      <div class="benefit-box">
+        <h4>🎙️ Host or Create</h4>
+        <p>Apply to host a show or launch your own channel.</p>
+      </div>
+      <div class="benefit-box">
+        <h4>🌍 Connect & Grow</h4>
+        <p>Join a passionate community of broadcasters and creatives.</p>
       </div>
     </div>
   </section>
 
-  <section class="section" id="get-involved">
-    <h2>Get Involved</h2>
-    <p>Want to host a show? Run a station? Join Skyline as a DJ, manager, or creative contributor.</p>
-    <p>We’re always looking for passionate people who love radio and want to be part of something big.</p>
-    <a href="mailto:contact@skyline.radio"><button class="btn">Contact Us</button></a>
+  <section id="get-involved">
+    <h2 class="section-title">Get Involved</h2>
+    <p style="text-align: center; max-width: 700px; margin: 0 auto;">
+      We’re expanding. Skyline is looking for the next generation of radio stars. Whether you want to manage a station, host a show, or join the creative team — we’d love to hear from you.
+    </p>
+    <div style="text-align: center;">
+      <a href="mailto:contact@skyline.radio" class="btn">Contact Us</a>
+    </div>
   </section>
 
   <footer>
