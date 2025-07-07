@@ -3,247 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Careers | Skyline Radio Network</title>
+  <title>Careers | Skyline</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9fbff;
-      color: #1a1a1a;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b1124;
+      color: #ffffff;
     }
-
     header {
-      background: linear-gradient(to right, #66ccff, #3399ff);
-      padding: 80px 20px;
-      text-align: center;
-      color: white;
+      background-color: #122050;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-
     header h1 {
-      font-size: 3.2rem;
-      margin-bottom: 10px;
+      color: #74b9ff;
+      font-size: 1.8rem;
+      margin: 0;
     }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
+    nav a {
+      color: #ffffff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #74b9ff;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
       margin: auto;
     }
-
-    section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
     h2 {
-      font-size: 2rem;
-      color: #3399ff;
-      margin-bottom: 20px;
+      color: #74b9ff;
+      margin-bottom: 0.5rem;
     }
-
-    .why-join p, .diversity p, .how-to-apply p {
-      font-size: 1rem;
-      color: #444;
-      line-height: 1.6;
-    }
-
-    .benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .benefit {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-
-    .benefit h3 {
-      margin-top: 0;
-      color: #222;
-    }
-
-    .roles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .role {
-      background: white;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-
-    .role h3 {
-      margin: 0 0 10px;
-    }
-
-    .role p {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .apply-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #3399ff;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .apply-btn:hover {
-      background-color: #0077cc;
-    }
-
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .step {
-      background: #e9f5ff;
-      border-left: 6px solid #3399ff;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .step h4 {
-      margin: 0 0 5px;
-    }
-
-    .cta {
-      text-align: center;
-      margin: 80px 20px 40px;
-    }
-
-    .cta a {
+    .intro p {
       font-size: 1.1rem;
+      line-height: 1.6;
+      color: #d6e2ff;
+    }
+
+    .job-openings {
+      margin-top: 3rem;
+    }
+    .job-listing {
+      margin-top: 1.5rem;
+    }
+    .job-item {
+      padding: 20px 0;
+      border-bottom: 1px solid #2f3e83;
+      cursor: pointer;
+    }
+    .job-item h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .job-item:hover h3 {
+      color: #74b9ff;
+    }
+    .job-desc {
+      display: none;
+      padding-top: 10px;
+      color: #c8d4ff;
     }
 
     footer {
+      background-color: #0a1a3a;
+      padding: 1.5rem;
       text-align: center;
-      padding: 40px;
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
+      color: #9bb4e5;
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Skyline</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="stations.html">Stations</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Careers at Skyline</h1>
-  <p>Be part of the next generation of online radio. We're building something big — and you could be a part of it.</p>
-</header>
+  <main>
+    <section class="intro">
+      <h2>Join the Skyline Network</h2>
+      <p>We’re always on the lookout for fresh talent to join our ever-expanding radio family. Whether you’re a rising DJ, a creative producer, or a passionate music lover with a voice, we’d love to hear from you.</p>
+    </section>
 
-<section class="why-join">
-  <h2>Why Join Skyline?</h2>
-  <p>Skyline is more than a radio network — it's a creative movement powered by passionate people. We're redefining how internet radio connects communities and inspires audiences across the UK and beyond. Whether you're behind the mic, behind the scenes, or helping shape the future — your voice matters here.</p>
-</section>
+    <section class="job-openings">
+      <h2>Open Positions</h2>
+      <div class="job-listing">
 
-<section class="benefits-section">
-  <h2>Benefits & Perks</h2>
-  <div class="benefits">
-    <div class="benefit">
-      <h3>Creative Freedom</h3>
-      <p>Pitch your own shows, segments, and ideas — we encourage originality and personality.</p>
-    </div>
-    <div class="benefit">
-      <h3>Flexible Schedule</h3>
-      <p>We work around your availability. Many roles can be remote or part-time.</p>
-    </div>
-    <div class="benefit">
-      <h3>Skill Building</h3>
-      <p>Grow in audio, writing, tech, or marketing — with mentoring and real experience.</p>
-    </div>
-    <div class="benefit">
-      <h3>Community</h3>
-      <p>Join a supportive and creative network of radio enthusiasts and professionals.</p>
-    </div>
-  </div>
-</section>
+        <div class="job-item" onclick="toggleJob('dj')">
+          <h3>🎧 DJ</h3>
+          <div class="job-desc" id="job-dj">
+            <p>As a DJ at one of our stations, you’ll host live or pre-recorded shows, interact with listeners, and curate great music. You must be confident on the mic and able to engage a digital audience. Experience with DJ software or tools like VirtualDJ, SAM Broadcaster, or Mixxx is a plus.</p>
+          </div>
+        </div>
 
-<section class="open-roles">
-  <h2>Current Opportunities</h2>
-  <div class="roles">
-    <div class="role">
-      <h3>Radio Presenter</h3>
-      <p>Host live or pre-recorded shows on one of our network stations. Bring your voice and passion to the airwaves.</p>
-      <a href="mailto:careers@skyline.radio?subject=Presenter Application" class="apply-btn">Apply Now</a>
-    </div>
-    <div class="role">
-      <h3>Content & News Writer</h3>
-      <p>Create engaging posts, write music news, or cover station updates across our site and socials.</p>
-      <a href="mailto:careers@skyline.radio?subject=Writer Application" class="apply-btn">Apply Now</a>
-    </div>
-    <div class="role">
-      <h3>Web & Tech Intern</h3>
-      <p>Help maintain and improve our websites using HTML/CSS, Vercel, or GitHub Pages.</p>
-      <a href="mailto:careers@skyline.radio?subject=Tech Intern Application" class="apply-btn">Apply Now</a>
-    </div>
-    <div class="role">
-      <h3>Social Media Lead</h3>
-      <p>Manage and grow our online presence on Instagram, Twitter, and TikTok with scheduled content and creative ideas.</p>
-      <a href="mailto:careers@skyline.radio?subject=Social Media Application" class="apply-btn">Apply Now</a>
-    </div>
-  </div>
-</section>
+        <div class="job-item" onclick="toggleJob('producer')">
+          <h3>🎙️ Producer</h3>
+          <div class="job-desc" id="job-producer">
+            <p>Producers help coordinate show schedules, plan programming, and ensure the smooth running of broadcasts. A strong sense of organization, timekeeping, and creative thinking is essential. No technical knowledge required, just passion and commitment.</p>
+          </div>
+        </div>
 
-<section class="diversity">
-  <h2>Diversity & Inclusion</h2>
-  <p>Skyline welcomes voices of all backgrounds. We are proud to build an inclusive network where talent, ideas, and community thrive together. If you're passionate, creative, and eager to learn — you're welcome here.</p>
-</section>
+        <div class="job-item" onclick="toggleJob('social')">
+          <h3>📱 Social Media Manager</h3>
+          <div class="job-desc" id="job-social">
+            <p>Grow and engage our audience across platforms like Instagram, TikTok, and X. Schedule content, collaborate with talent, and shape the online voice of our brand. Ideal for creative individuals who love radio and trends.</p>
+          </div>
+        </div>
 
-<section class="how-to-apply">
-  <h2>Our Hiring Process</h2>
-  <div class="steps">
-    <div class="step">
-      <h4>1. Apply</h4>
-      <p>Send us an email with your background, passion, and the role you're applying for.</p>
-    </div>
-    <div class="step">
-      <h4>2. Interview / Chat</h4>
-      <p>We’ll arrange a casual conversation to understand your vibe and goals.</p>
-    </div>
-    <div class="step">
-      <h4>3. Trial Show / Task</h4>
-      <p>Present a quick sample or complete a small task — nothing too intense.</p>
-    </div>
-    <div class="step">
-      <h4>4. Join the Team</h4>
-      <p>Welcome aboard! We’ll get you set up and introduce you to the crew.</p>
-    </div>
-  </div>
-</section>
+        <div class="job-item" onclick="toggleJob('voice')">
+          <h3>🎤 Voiceover Artist</h3>
+          <div class="job-desc" id="job-voice">
+            <p>Lend your voice to promos, sweepers, and jingles across our network. A quality microphone and basic recording setup is all you need. Ideal for people with characterful, clear, or expressive voices.</p>
+          </div>
+        </div>
 
-<div class="cta">
-  <h2>Didn’t see your dream role?</h2>
-  <p><a href="mailto:careers@skyline.radio?subject=General Application" class="apply-btn">Send a general application</a></p>
-</div>
+        <div class="job-item" onclick="toggleJob('manager')">
+          <h3>🧠 Station Manager</h3>
+          <div class="job-desc" id="job-manager">
+            <p>Lead a team, coordinate schedules, manage output quality, and ensure the success of your assigned station. Great for those with leadership potential who want hands-on experience running a radio brand.</p>
+          </div>
+        </div>
 
-<footer>
-  &copy; 2025 Skyline Radio Network. All rights reserved.
-</footer>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    &copy; 2025 Skyline Network. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleJob(id) {
+      const desc = document.getElementById('job-' + id);
+      if (desc.style.display === 'block') {
+        desc.style.display = 'none';
+      } else {
+        desc.style.display = 'block';
+      }
+    }
+  </script>
 </body>
 </html>
