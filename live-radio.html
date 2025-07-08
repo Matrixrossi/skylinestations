@@ -1,162 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Skyline - Live Radio</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Radio | Skyline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky-blue: #00bfff;
+      --white: #ffffff;
+      --background-opacity: rgba(0, 0, 0, 0.4);
+    }
 
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    font-family: 'Poppins', sans-serif;
-    background: #000;
-    color: #e1e8ff;
-    overflow-x: hidden;
-  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
 
-  /* Background video, no dim */
-  #bg-video {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    z-index: -1;
-  }
+    body {
+      background: url('your-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
 
-  /* Sidebar */
-  .sidebar {
-    position: fixed;
-    top: 0; left: 0;
-    width: 280px;
-    height: 100vh;
-    background: rgba(10, 25, 60, 0.85); /* subtle transparent blue, no heavy dim */
-    box-shadow: 2px 0 12px rgba(20, 50, 110, 0.8);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-    z-index: 10;
-  }
-  .sidebar img.logo {
-    width: 180px;
-    margin-bottom: 40px;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0; margin: 0;
-    width: 100%;
-  }
-  nav li {
-    margin-bottom: 24px;
-  }
-  nav a {
-    color: #74b9ff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: block;
-    padding: 12px 20px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-  }
-  nav a:hover,
-  nav a.active {
-    background: #3a65c1;
-    color: #a0c4ff;
-  }
+    .overlay {
+      background-color: var(--background-opacity);
+      backdrop-filter: blur(6px);
+      flex: 1;
+      padding-bottom: 100px; /* space for player */
+    }
 
-  /* Main content area */
-  main {
-    margin-left: 280px;
-    padding: 50px 60px;
-    max-width: 900px;
-  }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
 
-  /* Player container - inside sidebar for professional integration */
-  .player-container {
-    width: 100%;
-    margin-top: auto;
-    background: #1a2b5a;
-    border-radius: 14px;
-    padding: 16px 20px;
-    box-shadow: 0 0 10px #5478e1cc;
-  }
-  .player-container audio {
-    width: 100%;
-    outline: none;
-    border-radius: 8px;
-  }
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--white);
+    }
 
-  /* Headings and text */
-  h1 {
-    font-weight: 700;
-    font-size: 2.8rem;
-    margin-bottom: 16px;
-    color: #c0d4ff;
-  }
-  p {
-    font-size: 1.25rem;
-    color: #a8bde5;
-    max-width: 700px;
-  }
+    .carousel {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .sidebar {
-      position: relative;
-      width: 100%;
+    .carousel img {
+      width: 150px;
       height: auto;
-      flex-direction: row;
-      padding: 15px 10px;
-      justify-content: space-around;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
     }
-    main {
-      margin-left: 0;
-      padding: 30px 20px;
+
+    .carousel img:hover {
+      transform: scale(1.05);
     }
-    .player-container {
-      margin-top: 0;
-      width: 200px;
+
+    .now-playing-section {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
     }
-  }
-</style>
+
+    .now-playing-section img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .now-playing-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .now-playing-section p {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #000000d9;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    audio {
+      width: 90%;
+      max-width: 600px;
+    }
+
+    @media (max-width: 600px) {
+      .carousel img {
+        width: 100px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="overlay">
+    <header>
+      <h1>Skyline Live Radio</h1>
+    </header>
 
-  <!-- Background video -->
-  <video autoplay muted loop id="bg-video" playsinline>
-    <source src="your-background-video.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <img src="skyline-logo-blue.png" alt="Skyline Logo" class="logo" />
-    <nav>
-      <ul>
-        <li><a href="#" class="active">Live Radio</a></li>
-        <li><a href="#">Stations</a></li>
-        <li><a href="#">Events</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
-
-    <!-- Player in sidebar bottom -->
-    <div class="player-container">
-      <audio controls>
-        <source src="your-stream-url.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
-      </audio>
+    <div class="carousel">
+      <img src="rosss-radio-logo.png" alt="Ross's Radio" onclick="switchStation('rosss')">
+      <img src="skyline-club-logo.png" alt="Skyline Club" onclick="switchStation('club')">
     </div>
-  </aside>
 
-  <!-- Main content -->
-  <main>
-    <h1>Welcome to Skyline Live Radio</h1>
-    <p>Stream the best shows and music 24/7 with crystal clear audio. Explore our stations, events, and more.</p>
-  </main>
+    <div class="now-playing-section" id="nowPlaying">
+      <img src="presenter-image.jpg" alt="Now Playing Image">
+      <h2>Live on Ross's Radio</h2>
+      <p>Presenter: Ross</p>
+      <p>Now Playing: Feel Good Hit - DJ Sample</p>
+    </div>
+  </div>
 
+  <footer>
+    <audio controls autoplay id="audioPlayer">
+      <source src="https://yourstreamurl.com/rosss" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </footer>
+
+  <script>
+    function switchStation(station) {
+      const player = document.getElementById('audioPlayer');
+      const nowPlaying = document.getElementById('nowPlaying');
+
+      if (station === 'rosss') {
+        player.src = 'https://yourstreamurl.com/rosss';
+        nowPlaying.innerHTML = `
+          <img src="presenter-image.jpg" alt="Now Playing Image">
+          <h2>Live on Ross's Radio</h2>
+          <p>Presenter: Ross</p>
+          <p>Now Playing: Feel Good Hit - DJ Sample</p>
+        `;
+      } else if (station === 'club') {
+        player.src = 'https://yourstreamurl.com/club';
+        nowPlaying.innerHTML = `
+          <img src="club-presenter.jpg" alt="Now Playing Image">
+          <h2>Live on Skyline Club</h2>
+          <p>Presenter: DJ Skyline</p>
+          <p>Now Playing: Club Anthem - Skyline</p>
+        `;
+      }
+      player.play();
+    }
+  </script>
 </body>
+
 </html>
