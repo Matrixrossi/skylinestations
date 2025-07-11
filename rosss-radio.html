@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ross's Radio | Skyline Network</title>
+  <style>
+    :root {
+      --sky-blue: #7ecbff;
+      --light-bg: #f0faff;
+      --text-main: #003366;
+      --accent: #0099ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-main);
+    }
+
+    header {
+      background: var(--sky-blue);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(to right, var(--sky-blue), #b2e7ff);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .schedule, .featured, .requests {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .show {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid var(--accent);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .featured-show {
+      background: #e6f7ff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .featured-show h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    form input, form textarea, form button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    form button {
+      background: var(--accent);
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background: var(--sky-blue);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ross's Radio</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#requests">Request</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Live Now: Club Classics</h2>
+    <p>With Ross – Saturdays 8PM–12AM</p>
+  </section>
+
+  <section class="schedule" id="schedule">
+    <h2 class="section-title">Show Schedule</h2>
+    <div class="show">
+      <strong>Club Classics</strong><br>
+      Saturdays 8PM–12AM — Hosted by Ross
+    </div>
+    <div class="show">
+      <strong>Feel Good Fridays</strong><br>
+      Fridays 6PM–9PM — With Jess
+    </div>
+    <div class="show">
+      <strong>Morning Mix</strong><br>
+      Weekdays 9AM–12PM — With Emma
+    </div>
+  </section>
+
+  <section class="featured">
+    <h2 class="section-title">Featured Show</h2>
+    <div class="featured-show">
+      <h3>🎧 Club Classics</h3>
+      <p>Four hours of non-stop bangers, live every Saturday with Ross. Expect massive tunes, high energy, and feel-good vibes all night long.</p>
+    </div>
+  </section>
+
+  <section class="requests" id="requests">
+    <h2 class="section-title">Request a Song</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="text" placeholder="Song Name + Artist" required />
+      <textarea placeholder="Optional Shoutout..."></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Ross's Radio | Part of the Skyline Network
+  </footer>
+</body>
+</html>
